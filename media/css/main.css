@@ -1,0 +1,495 @@
+:root {
+  --background-grey: #53565b;
+  --background-dark-grey: #24282e;
+  --dark-orange: #fb4b01;
+}
+
+* {
+  font-family: "Mulish", sans-serif;
+}
+
+html {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-size: 62.5%;
+  margin: 0;
+}
+
+@media (max-width: 990px) {
+  html {
+    font-size: 50%;
+  }
+}
+
+@media (max-width: 450px) {
+  html {
+    font-size: 40%;
+  }
+}
+
+body {
+  margin: 0;
+}
+
+nav {
+  background-color: #000;
+  color: #fff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+nav ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+nav ul li {
+  display: inline-block;
+  font-size: 1.7rem;
+  padding-right: 2rem;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+nav div {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+nav div p {
+  margin-right: 2rem;
+  font-size: 1.7rem;
+}
+
+nav div img {
+  max-width: 4rem;
+  max-height: 3rem;
+  margin-right: 2rem;
+}
+
+#myVideo {
+  margin-top: -45px;
+  margin-bottom: -60px;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  z-index: -1;
+}
+
+.instagram-video {
+  max-height: 3.5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-right: 3rem;
+  margin-left: auto;
+  margin-bottom: -10%;
+  padding-bottom: 20%;
+  margin-top: -20%;
+}
+
+section.first-section {
+  background-color: var(--background-grey);
+  color: white;
+  text-align: center;
+  margin-top: -1px;
+}
+
+section.first-section p {
+  margin: 0 auto;
+  font-size: 1.7rem;
+  max-width: 75rem;
+  margin-bottom: 2rem;
+}
+
+section.first-section img {
+  width: 90%;
+  max-width: 85rem;
+  padding-right: 2rem;
+  padding-left: 2rem;
+  padding-bottom: 5rem;
+  margin-top: 14rem;
+}
+
+h2 {
+  font-size: 3.5rem;
+  margin: 0;
+  padding-top: 2rem;
+}
+
+hr {
+  border-color: var(--dark-orange);
+  max-width: 25rem;
+  margin-top: 1rem;
+  margin-bottom: 4rem;
+}
+
+.steps {
+  padding: 2rem;
+  background-color: black;
+  color: white;
+}
+
+.steps h2 {
+  font-size: 2rem !important;
+  text-align: center;
+}
+
+.steps-items {
+  margin-top: 2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.steps-items p {
+  max-width: 21rem;
+  font-size: 1.4rem;
+}
+
+.steps-items img {
+  max-width: 7rem;
+  max-height: 7rem;
+}
+
+.steps-items div {
+  text-align: center;
+}
+
+.bg-color-light-grey {
+  background-color: var(--background-grey);
+}
+
+.bg-color-dark-grey {
+  background-color: var(--background-dark-grey);
+}
+
+.how-works div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.how-works div .text {
+  display: block;
+  color: white;
+  padding: 3rem;
+}
+
+.how-works div .text h3 {
+  font-size: 1.9rem;
+  text-align: center;
+}
+
+.how-works div .text p {
+  font-size: 1.7rem;
+}
+
+.how-works div img {
+  width: 50%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.header {
+  padding-top: 3rem;
+  background-image: -webkit-gradient(linear, left bottom, left top, from(#0a060686), to(#0a0909ec)), url("images/car.png");
+  background-image: linear-gradient(360deg, #0a060686, #0a0909ec), url("images/car.png");
+  background-size: cover;
+  background-position: top;
+  background-attachment: fixed;
+}
+
+.header-primary {
+  color: #fff;
+  display: block;
+  text-transform: uppercase;
+  text-align: center;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  padding-top: 1rem;
+}
+
+.header-primary-main {
+  display: block;
+  font-size: 2.8rem;
+  color: white;
+  font-weight: 200;
+  padding-left: 3rem;
+  text-transform: uppercase;
+}
+
+.header-primary-sub img {
+  text-align: center;
+  font-size: 3rem;
+  display: inline;
+  max-width: 1.5rem;
+  margin-bottom: -3rem;
+  margin-right: 5rem;
+}
+
+.header-secondary {
+  background-color: rgba(17, 17, 17, 0.719);
+  display: block;
+  color: #fff;
+  text-align: center;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  padding-top: 2rem;
+  margin-top: -3rem;
+}
+
+.header-secondary-main {
+  font-size: 2rem;
+  top: 5.1rem;
+  line-height: 1.5rem;
+  display: block;
+  min-height: calc(100%-41px);
+}
+
+.header-tertiary-main {
+  display: block;
+}
+
+.header-secondary-sub {
+  display: block;
+  text-transform: lowercase;
+  font-size: 1.8rem;
+  font-family: inherit;
+  padding: 0 1.5rem;
+}
+
+.header-secondary-initial {
+  display: block;
+  text-transform: lowercase;
+  font-size: 1.8rem;
+  font-family: inherit;
+  padding: 0 1.5rem;
+}
+
+.header-automax {
+  display: block;
+  font-size: 0.8rem;
+  margin-bottom: 2rem;
+}
+
+.main-content-container {
+  max-width: 850rem;
+  margin: 0 auto;
+}
+
+.margin-content {
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+
+.text-red {
+  color: rgba(255, 0, 0, 0.76);
+}
+
+.center {
+  text-align: center;
+}
+
+.container-fluid {
+  width: 100vh;
+  padding: 2rem;
+  margin: 9rem;
+  background-color: #ff4500;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: [header-start] 10rem [header-end] 10rem 10rem;
+      grid-template-rows: [header-start] 10rem [header-end] 10rem 10rem;
+  -ms-grid-columns: (1fr)[3] 20rem;
+      grid-template-columns: repeat(3, 1fr) 20rem;
+  grid-gap: 1rem;
+}
+
+.item {
+  background-color: #050505;
+  margin-left: 1.5rem;
+  padding-top: -1rem;
+  font-family: sans-serif;
+  text-align: center;
+}
+
+.section {
+  background-color: #000000;
+  color: #fff;
+}
+
+.section-features {
+  padding: 5rem;
+  margin-top: -9rem;
+  background-color: #000000;
+  color: #ffffff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.feature-text {
+  display: inline-block;
+}
+
+.header-tertiary-main {
+  text-transform: uppercase;
+  font-family: sans-serif;
+  display: block;
+  text-align: center;
+  margin: 1rem;
+}
+
+.section-services {
+  display: inline-block;
+  background-color: #252525;
+  margin: 0rem;
+  border: 0rem;
+  padding-top: -9rem;
+}
+
+.image-composition {
+  size: 4rem;
+  width: 50%;
+  height: 25%;
+}
+
+.text-content {
+  text-align: center;
+  color: white;
+}
+
+.section-listing {
+  padding-top: 4rem;
+  background-color: #151414;
+  color: #ffffff;
+  display: block;
+  font-family: serif;
+}
+
+.section-optimize {
+  padding-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.header-submain-altra {
+  text-transform: uppercase;
+  font-family: sans-serif;
+  display: block;
+  text-align: center;
+  margin: 1rem;
+  font-size: 2rem;
+}
+
+.linear {
+  width: 120rem;
+  text-align: center;
+  padding-right: 3rem;
+  margin: 1rem;
+}
+
+.header-optimize {
+  padding: 5rem;
+  margin-top: -9rem;
+  background-color: #151414;
+  color: #ffffff;
+  display: inline-flexbox;
+}
+
+.header-optimize-main {
+  text-transform: uppercase;
+  font-size: 2rem;
+  font-weight: 20rem;
+  font-family: serif;
+}
+
+.header-cost {
+  padding: 5rem;
+  margin-top: -9rem;
+  background-color: #151414;
+  color: #ffffff;
+  display: inline-flexbox;
+}
+
+.header-cost-main {
+  text-transform: uppercase;
+  font-size: 2rem;
+  font-weight: 20rem;
+  font-family: serif;
+}
+
+.currency {
+  background-color: #552402da;
+  font-size: 2rem;
+  padding: 2rem;
+  margin: 1rem;
+  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.h4 {
+  color: #ff4500;
+  font-size: 2rem;
+  text-transform: uppercase;
+}
+
+.h3 {
+  text-align: center;
+}
+
+.h6 {
+  font-size: 3rem;
+  text-transform: uppercase;
+  text-align: center;
+  margin: 1rem;
+}
+
+.row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.container {
+  max-width: -webkit-max-content;
+  max-width: -moz-max-content;
+  max-width: max-content;
+}
+/*# sourceMappingURL=main.css.map */

@@ -1,7 +1,6 @@
 package main
 
 import (
-	"fmt"
 	"net/http"
 	"os"
 
@@ -16,51 +15,45 @@ var (
 )
 
 func main() {
+	// We create the instance for Gin
 	r := gin.Default()
 
-	// Internationalization
+	// Internationalization for showing the right language to match the browser's  default settings
+	// The name of the files must match the
 	bundle := i18n.NewBundle(
-		language.Spanish,
+		language.English,
 		"text/en.toml",
 		"text/es.toml",
 	)
+
+	// Tell Gin to use our middleware. This means that in every single request (GET, POST...), the call to i18n will be executed
 	r.Use(i18n.Serve(bundle))
 
 	// Path to the static files (images, svg, css..)
-	r.StaticFS("/static", http.Dir(BasePath+"/media"))
+	r.StaticFS("/static", http.Dir("/media"))
+
 	// Path to the HTML templates
-	r.LoadHTMLGlob(BasePath + "/*.html")
+	r.LoadHTMLGlob("/*.html")
 
 	// Redirects when users introduces a wrong URL
 	r.NoRoute(redirect)
 
+	// This get executed when the users gets into our website in the home domain ("/")
 	r.GET("/", renderHome)
-	r.Run() // listen and serve on 0.0.0.0:8080 (for windows "localhost:8080")
+	// Listen and serve on 0.0.0.0:8080 (for windows "localhost:8080")
+	r.Run()
 }
 
-// Renders the landing page
+/* Renders the landing page and it passes the parameters that will be rendered in the HTML.
+In this case the text of the website, and we are using the i18n to detect the default browser language of the user and show accordingly.
+*/
 func renderHome(c *gin.Context) {
-	l := parseTags(c.Request.FormValue("lang"), c.Request.Header.Get("Accept-Language"))
-	fmt.Print("L es: ", l)
 	c.HTML(http.StatusOK, "index.html", gin.H{
 		"hi": i18n.FormatMessage(c, &i18n.Message{ID: "hi"}, nil),
 	})
 }
 
-// Redirects to the home route
+// Redirects to the home route when the users type an URL inside our domain that does not exists
 func redirect(c *gin.Context) {
 	c.Redirect(http.StatusFound, "/")
-}
-
-// Return the Language tag from the browser info
-func parseTags(langs ...string) []language.Tag {
-	tags := []language.Tag{}
-	for _, lang := range langs {
-		t, _, err := language.ParseAcceptLanguage(lang)
-		if err != nil {
-			continue
-		}
-		tags = append(tags, t...)
-	}
-	return tags
 }

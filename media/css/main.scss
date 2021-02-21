@@ -1,9 +1,11 @@
+// Define variables for the whole proyect
 :root {
   --background-grey: #53565b;
   --background-dark-grey: #24282e;
   --dark-orange: #fb4b01;
 }
 
+// Universal selector, you select all elements and apply same typography
 * {
   font-family: "Mulish", sans-serif;
 }

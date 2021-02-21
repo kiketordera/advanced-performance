@@ -10,19 +10,19 @@
   font-family: "Mulish", sans-serif;
 }
 
+// All the project is designed on rem instead of px, that means that ell elements that are measures in the rem unit (which substitues the px unit), are pointing to the font-size of the html{} tag. So thanks to that, we can make here the media queries for handeling the different sizes of the screens, and since all rem units are pointing to this font-size attribute, when we change it here, we change it in the wholen rem units across the project
 html {
   box-sizing: border-box;
   font-size: 62.5%;
   margin: 0;
-
   @media (max-width: 990px) {
     font-size: 50%;
   }
-
   @media (max-width: 450px) {
     font-size: 40%;
   }
 }
+
 body {
   margin: 0;
 }

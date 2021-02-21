@@ -18,8 +18,17 @@ func main() {
 	// We create the instance for Gin
 	r := gin.Default()
 
-	// Internationalization for showing the right language to match the browser's  default settings
-	// The name of the files must match the
+	/*
+		 Internationalization for showing the right language to match the browser's  default settings
+
+			The name of the files must match:
+			af, ar, az, be, bg, bn, bs, ca, cs, cy, da, de, de-AT, de-CH, de-DE, el, el-CY, en, en-AU, en-CA, en-GB,
+			en-IE, en-IN, en-NZ, en-US, en-ZA, en-CY, en-TT, eo, es, es-419, es-AR, es-CL, es-CO, es-CR, es-EC, es-ES,
+			es-MX, es-NI, es-PA, es-PE, es-US, es-VE, et, eu, fa, fi, fr, fr-CA, fr-CH, fr-FR, gl, he, hi, hi-IN, hr,
+			hu, id, is, it, it-CH, ja, ka, km, kn, ko, lb, lo, lt, lv, mk, ml, mn, mr-IN, ms, nb, ne, nl, nn, oc, or,
+			pa, pl, pt, pt-BR, rm, ro, ru, sk, sl, sq, sr, st, sw, ta, te, th, tl, tr, tt, ug, ur, uz, vi, wo, zh-CN,
+			zh-HK, zh-TW, zh-YUE
+	*/
 	bundle := i18n.NewBundle(
 		language.English,
 		"text/en.toml",
@@ -29,7 +38,7 @@ func main() {
 	// Tell Gin to use our middleware. This means that in every single request (GET, POST...), the call to i18n will be executed
 	r.Use(i18n.Serve(bundle))
 
-	// Path to the static files (images, svg, css..)
+	// Path to the static files. /static is rendered in the HTML and /media is the link to the path to the  images, svg, css.. the static files
 	r.StaticFS("/static", http.Dir("/media"))
 
 	// Path to the HTML templates

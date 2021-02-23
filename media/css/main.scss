@@ -3,6 +3,7 @@
   --background-grey: #53565b;
   --background-dark-grey: #24282e;
   --dark-orange: #fb4b01;
+  --orange: #ff9442;
 }
 
 // Universal selector, you select all elements and apply same typography
@@ -160,16 +161,20 @@ hr {
 .how-works {
   div {
     display: flex;
+    max-height: 40rem;
     .text {
       display: block;
       color: white;
       padding: 3rem;
+      width: 100%;
       h3 {
         font-size: 1.9rem;
         text-align: center;
       }
       p {
         font-size: 1.7rem;
+        max-width: 50rem;
+        margin: 0 auto;
       }
     }
     img {
@@ -180,244 +185,148 @@ hr {
 }
 
 // ********************************************************************************************** YOUR CODE STARTS FROM HERE *********************************************************************************************************************************************  /
-
-.header {
-  padding-top: 3rem;
-  background-image: linear-gradient(360deg, #0a060686, #0a0909ec),
-    url("/static/images/car.png");
-  background-size: cover;
-  background-position: top;
-  background-attachment: fixed;
-}
-
-.header-primary {
-  color: #fff;
-  display: block;
-  text-transform: uppercase;
-  text-align: center;
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-  padding-top: 1rem;
-}
-
-.header-primary-main {
-  display: block;
-  font-size: 2.8rem;
+section.step {
   color: white;
-  font-weight: 200;
-  padding-left: 3rem;
-  text-transform: uppercase;
+  background-color: var(--background-dark-grey);
+  h2 {
+    text-align: center;
+    img {
+      max-width: 7rem;
+    }
+    margin-bottom: 1rem;
+  }
+  .step-items {
+    display: flex;
+    div {
+      margin: 2rem;
+      @media (max-width: 1150px) {
+        margin: 1rem;
+      }
+      p {
+        max-width: 45rem;
+      }
+      h3 {
+        font-size: 2rem;
+      }
+      img {
+        max-width: 100%;
+      }
+    }
+  }
 }
 
-.header-primary-sub img {
-  text-align: center;
-  font-size: 3rem;
-  display: inline;
-  max-width: 1.5rem;
-  margin-bottom: -3rem;
-  margin-right: 5rem;
-}
-
-.header-secondary {
-  background-color: rgba(17, 17, 17, 0.719);
-  display: block;
-  color: #fff;
-  text-align: center;
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-  padding-top: 2rem;
-  margin-top: -3rem;
-}
-.header-secondary-main {
-  font-size: 2rem;
-  top: 5.1rem;
-  line-height: 1.5rem;
-  display: block;
-  min-height: calc(100%-41px);
-}
-.header-tertiary-main {
-  display: block;
-}
-
-.header-secondary-sub {
-  display: block;
-  text-transform: lowercase;
-  font-size: 1.8rem;
-  font-family: inherit;
-  padding: 0 1.5rem;
-}
-.header-secondary-initial {
-  display: block;
-  text-transform: lowercase;
-  font-size: 1.8rem;
-  font-family: inherit;
-  padding: 0 1.5rem;
-}
-
-.header-automax {
-  display: block;
-  font-size: 0.8rem;
-  margin-bottom: 2rem;
-}
-.main-content-container {
-  max-width: 850rem;
-  margin: 0 auto;
-}
-
-.margin-content {
-  margin-left: 1rem;
-  margin-right: 1rem;
-}
-.text-red {
-  color: rgba(255, 0, 0, 0.76);
-}
-.center {
-  text-align: center;
-}
-
-.container-fluid {
-  width: 100vh;
-  padding: 2rem;
-  margin: 9rem;
-  background-color: #ff4500;
-
-  display: grid;
-  grid-template-rows: [header-start]10rem [header-end]10rem 10rem;
-  grid-template-columns: repeat(3, 1fr) 20rem;
-  grid-gap: 1rem;
-}
-
-.item {
-  background-color: rgb(5, 5, 5);
-  margin-left: 1.5rem;
-  padding-top: -1rem;
-  font-family: sans-serif;
-  text-align: center;
-}
-.section {
-  background-color: #000000;
-  color: #fff;
-}
-.section-features {
-  padding: 5rem;
-  margin-top: -9rem;
-  background-color: #000000;
-  color: #ffffff;
-  display: flex;
-}
-
-.feature-text {
-  display: inline-block;
-}
-
-.header-tertiary-main {
-  text-transform: uppercase;
-  font-family: sans-serif;
-  display: block;
-  text-align: center;
-  margin: 1rem;
-}
-.section-services {
-  display: inline-block;
-  background-color: #252525;
-  margin: 0rem;
-  border: 0rem;
-  padding-top: -9rem;
-}
-.image-composition {
-  size: 4rem;
-  width: 50%;
-  height: 25%;
-}
-.text-content {
-  text-align: center;
+section.optimise {
   color: white;
-}
-.section-listing {
-  padding-top: 4rem;
-  background-color: hsl(0, 2%, 8%);
-  color: #ffffff;
-  display: block;
-  font-family: serif;
-}
-.section-optimize {
-  padding-top: 2rem;
-  margin-bottom: 2rem;
+  background-color: var(--background-dark-grey);
+  padding-bottom: 10px;
+  h2 {
+    text-align: left;
+    img {
+      max-width: 7rem;
+      margin-left: 5rem;
+      margin-right: 1rem;
+    }
+    margin-bottom: 3rem;
+  }
+
+  p {
+    margin: 0 3rem;
+  }
+  .prices-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    @media (max-width: 700px) {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    max-width: 150rem;
+    margin: 0 auto;
+    grid-gap: 5px;
+    padding: 5px;
+    background-color: var(--dark-orange);
+    color: white;
+    div {
+      background-color: black;
+      padding: 2rem;
+      font-size: 1.5rem;
+      p.title {
+        font-family: "Bungee", cursive;
+        color: var(--orange);
+        font-size: 3rem;
+        text-align: center;
+        margin: 1rem auto;
+      }
+      p.price {
+        font-family: "Bungee", cursive;
+        font-size: 5rem;
+        text-align: center;
+        margin: 0;
+        margin: 1rem auto;
+      }
+      p.offer {
+        margin-left: 4rem;
+      }
+      hr {
+        border-color: white;
+        width: 99%;
+        max-width: none;
+        margin-right: 5px;
+      }
+    }
+    .extra {
+      grid-column: span 2;
+      @media (max-width: 700px) {
+        grid-column: span 1;
+      }
+    }
+  }
 }
 
-.header-submain-altra {
-  text-transform: uppercase;
-  font-family: sans-serif;
-  display: block;
-  text-align: center;
-  margin: 1rem;
-  font-size: 2rem;
-}
-.linear {
-  width: 120rem;
-  text-align: center;
-  padding-right: 3rem;
-  margin: 1rem;
-}
-.header-optimize {
-  padding: 5rem;
-  margin-top: -9rem;
-  background-color: hsl(0, 2%, 8%);
-  color: #ffffff;
-  display: inline-flexbox;
-}
-.header-optimize-main {
-  text-transform: uppercase;
-  font-size: 2rem;
-  font-weight: 20rem;
-  font-family: serif;
-}
-.header-cost {
-  padding: 5rem;
-  margin-top: -9rem;
-  background-color: hsl(0, 2%, 8%);
-  color: #ffffff;
-  display: inline-flexbox;
-}
-.header-cost-main {
-  text-transform: uppercase;
-  font-size: 2rem;
-  font-weight: 20rem;
-  font-family: serif;
-}
-
-.currency {
-  background-color: #552402da;
-  font-size: 2rem;
-  padding: 2rem;
-  margin: 1rem;
-  text-align: center;
-
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.h4 {
-  color: #ff4500;
-  font-size: 2rem;
-  text-transform: uppercase;
-}
-.h3 {
-  text-align: center;
-}
-.h6 {
-  font-size: 3rem;
-  text-transform: uppercase;
-  text-align: center;
-  margin: 1rem;
-}
-.row {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-}
-.container {
-  max-width: max-content;
+section.contact {
+  background-color: var(--background-grey);
+  .grid {
+    max-width: 150rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 10px;
+    padding: 10px;
+    margin: 0 auto;
+    div {
+      border: solid 2px var(--dark-orange);
+      background-color: white;
+      div {
+        border: none;
+      }
+      .button {
+        display: flex;
+        background-color: black;
+        max-width: fit-content;
+        border-radius: 40rem;
+        color: white;
+        img {
+          height: 100%;
+        }
+        p {
+          align-self: center;
+          margin: 0 3rem;
+        }
+      }
+      .button:hover {
+        background-color: var(--background-dark-grey);
+      }
+    }
+    .instagram {
+      grid-row-start: 1;
+      grid-column-start: 2;
+      grid-row-end: span 2;
+      div {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        img {
+          max-width: 100%;
+          object-fit: cover;
+        }
+      }
+    }
+  }
 }

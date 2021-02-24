@@ -1,0 +1,61 @@
+<!-- Cookies banner -->
+<div id="cookies-eu-banner" style="display: none">
+  <div>
+    By continuing to visit this site, you accept the use of cookies by Google
+    Analytics for statistical purposes.
+    <a href="./read-more.html" id="cookies-eu-more">Read more</a>
+  </div>
+
+  <div class="buttons">
+    <button id="cookies-eu-reject">Reject</button>
+    <button id="cookies-eu-accept">Accept</button>
+  </div>
+</div>
+<!-- Custom Style Cookies banner -->
+<style>
+  #cookies-eu-banner {
+    background-color: rgba(20, 20, 20, 0.8);
+    justify-content: space-between;
+    min-height: 26px;
+    font-size: 14px;
+    color: #ccc;
+    line-height: 26px;
+    padding: 8px 0 8px 30px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 9999;
+  }
+
+  #cookies-eu-banner .buttons {
+    margin-right: 15px;
+    min-width: 135px;
+  }
+
+  @media only screen and (max-width: 580px) {
+    #cookies-eu-banner .buttons {
+      min-width: 70px;
+    }
+    #cookies-eu-banner .buttons button:last-child {
+      margin-top: 10px;
+    }
+  }
+
+  #cookies-eu-banner .buttons button {
+    background-color: #009999;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    margin-left: 10px;
+  }
+</style>
+
+<!-- Cookies Consent Logic  -->
+<script async src="cookies-eu-banner.js"></script>
+<script>
+  new CookiesEuBanner(function () {
+    // Your code to launch when user accept cookies
+    console.log("User just press accepted!");
+  }, true);
+</script>

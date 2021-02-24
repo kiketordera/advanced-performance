@@ -1,7 +1,6 @@
 package main
 
 import (
-	"fmt"
 	"net/http"
 	"os"
 
@@ -39,12 +38,12 @@ func main() {
 	)
 
 	// If the user did not set up the GOPATH the program will panic. We print in the console in red letters what the user should type to fix it
-	defer func() {
-		if r := recover(); r != nil {
-			fmt.Println("Try writing the GOPATH with: ")
-			fmt.Println("\033[31mexport GOPATH=$HOME/go\033[37m")
-		}
-	}()
+	// defer func() {
+	// 	if r := recover(); r != nil {
+	// 		fmt.Println("Try writing the GOPATH with: ")
+	// 		fmt.Println("\033[31mexport GOPATH=$HOME/go\033[37m")
+	// 	}
+	// }()
 
 	// Tell Gin to use our middleware. This means that in every single request (GET, POST...), the call to i18n will be executed
 	r.Use(i18n.Serve(bundle))

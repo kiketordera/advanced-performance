@@ -33,6 +33,8 @@ nav {
   color: #fff;
   display: flex;
   justify-content: space-between;
+  position: fixed;
+  width: 100%;
 
   & ul {
     display: flex;

@@ -64,8 +64,8 @@ nav {
 }
 
 #myVideo {
-  margin-top: -45px;
-  margin-bottom: -60px;
+  margin-top: -5%;
+  margin-bottom: -5%;
   right: 0;
   bottom: 0;
   width: 100%;
@@ -81,8 +81,8 @@ nav {
     margin-right: 3rem;
     margin-left: auto;
     margin-bottom: -10%;
-    padding-bottom: 20%;
-    margin-top: -20%;
+    padding-bottom: 10.8%;
+    margin-top: -5%;
   }
 }
 
@@ -199,6 +199,7 @@ section.step {
   }
   .step-items {
     display: flex;
+    justify-content: center;
     div {
       margin: 2rem;
       @media (max-width: 1150px) {
@@ -234,13 +235,22 @@ section.optimise {
   p {
     margin: 0 3rem;
   }
+  .optimise-item {
+    h2 {
+      text-align: center;
+    }
+    p {
+      max-width: 150rem;
+      margin: 0 auto;
+      font-size: 1.7rem;
+    }
+  }
   .prices-grid {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     @media (max-width: 700px) {
       grid-template-columns: 1fr 1fr;
     }
-
     max-width: 150rem;
     margin: 0 auto;
     grid-gap: 5px;
@@ -287,26 +297,66 @@ section.optimise {
 section.contact {
   background-color: var(--background-grey);
   .grid {
-    max-width: 150rem;
+    max-width: 151rem;
     display: grid;
     grid-template-columns: 1fr 1fr;
+    @media (max-width: 750px) {
+      grid-template-columns: 1fr;
+    }
     grid-gap: 10px;
     padding: 10px;
     margin: 0 auto;
     div {
       border: solid 2px var(--dark-orange);
       background-color: white;
+      padding: 3rem;
+      text-align: center;
+      p {
+        max-width: 55rem;
+      }
+
+      h2 {
+        font-size: 4rem;
+        font-weight: 600;
+        text-align: center;
+      }
       div {
         border: none;
+        justify-content: center;
+        display: flex;
+        font-size: 2rem;
+        img {
+          max-width: 4rem;
+          margin-right: 3rem;
+        }
+      }
+      .join-us {
+        margin: 0 auto;
+        margin-top: 2rem;
+        font-size: 1.8rem;
       }
       .button {
-        display: flex;
+        display: flex !important;
         background-color: black;
         max-width: fit-content;
         border-radius: 40rem;
         color: white;
+        padding: 0;
+        height: 7rem;
+        margin: 0 auto;
+        &-join {
+          margin-top: 13rem;
+          @media (max-width: 1400px) {
+            margin-top: 10rem;
+          }
+          @media (max-width: 1300px) {
+            margin-top: 7rem;
+          }
+        }
         img {
           height: 100%;
+          max-width: 100%;
+          object-fit: cover;
         }
         p {
           align-self: center;
@@ -317,13 +367,23 @@ section.contact {
         background-color: var(--background-dark-grey);
       }
     }
+    .grid-cars {
+      padding: 2rem 0rem;
+    }
     .instagram {
       grid-row-start: 1;
       grid-column-start: 2;
       grid-row-end: span 2;
+      grid-gap: 5px;
+      @media (max-width: 750px) {
+        grid-row-start: 2;
+        grid-column-start: 1;
+        grid-column-end: 2;
+      }
       div {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
+        grid-gap: 5px;
         img {
           max-width: 100%;
           object-fit: cover;

@@ -25,3 +25,7 @@ air
 # If you have a permission denied error, run the following:
 
 chmod u+x air
+
+# If we want to use the hot reload with the make file, write:
+
+make watch

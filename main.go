@@ -60,6 +60,7 @@ func main() {
 	// This get executed when the users gets into our website in the home domain ("/")
 	r.GET("/", renderHome)
 	// Listen and serve on 0.0.0.0:8080 (for windows "localhost:8080")
+
 	r.Run()
 }
 

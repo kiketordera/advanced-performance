@@ -22,7 +22,7 @@
   </head>
   <body>
     <nav>
-      <ul class="menu">
+      <ul>
         <li>
           <img
             src="/static/images/svg/logo.svg"
@@ -30,30 +30,29 @@
             class="logo"
           />
         </li>
-        <li>ABOUT</li>
-        <li>SERVICES</li>
-        <li>PRICES</li>
-        <li>CONTACT</li>
+        <li><a href="#about"> ABOUT</a></li>
+        <li><a href="#services"> SERVICES</a></li>
+        <li><a href="#prices" class=""> PRICES</a></li>
+        <li><a href="#contact" class=""> CONTACT</a></li>
       </ul>
-
       <div>
         <img src="/static/images/svg/telephone.svg" />
         <p>+44 77 94 234 052</p>
-        <img src="/static/images/svg/uruguay.svg" />
-        <img src="/static/images/svg/america.svg" />
+        <!-- <img src="/static/images/svg/uruguay.svg" />
+        <img src="/static/images/svg/america.svg" /> -->
       </div>
     </nav>
 
-    <video autoplay="true" muted="" playsinline="" id="myVideo">
+    <video loop autoplay muted playsinline id="myVideo">
       <source src="/static/video/ap.mov" type="video/mp4" />
     </video>
-    <a href="" class="" style="text-align: right">
+    <a id="about" href="" class="" style="text-align: right">
       <img src="/static/svg/instagram.svg" alt="" class="instagram-video" />
     </a>
 
     <section class="first-section">
-      {{.hola}} {{.hi}}
       <h2>WHAT IS CHIP TUNING OR ECU REMAP?</h2>
+      <br />
       <hr />
       <p>
         Modifications we made are based on original calibration files. That’s
@@ -71,40 +70,62 @@
         professional engineers and mechanics have developed custom chiptuning
         Stage 1, Stage 2, Stage 3 and Stage 4.
       </p>
-      <img src="/static/svg/main-graph.svg" alt="" />
+      <picture>
+        <source
+          class="padding-5"
+          alt="Value Villages project web app"
+          loading="lazy"
+          srcset="
+            /static/svg/graph-small.svg 1x,
+            /static/svg/graph-small.svg 2x
+          "
+          media="(max-width: 750px)"
+        />
+        <img
+          class="padding-5"
+          loading="lazy"
+          srcset="/static/svg/main-graph.svg 1x, /static/svg/main-graph.svg 2x"
+          alt="Advanced Performance graph"
+        />
+        <!-- <figcaption class="story__caption">Caption of the image</figcaption> -->
+      </picture>
     </section>
 
     <section class="steps">
       <h2>BUY TUNING FILES IN 4 QUICK, SAFE AND EASY STEPS</h2>
       <div class="steps-items">
-        <div>
-          <img src="/static/images/svg/user.svg" />
-          <h3>STEP 1: REGISTER</h3>
-          <p>
-            Register your account free of charge. Registration is obligatory if
-            you want to upload and recieve chiptuning files..
-          </p>
+        <div class="part">
+          <div>
+            <img src="/static/images/svg/user.svg" />
+            <h3>STEP 1: REGISTER</h3>
+            <p>
+              Register your account free of charge. Registration is obligatory
+              if you want to upload and recieve chiptuning files..
+            </p>
+          </div>
+          <div>
+            <img src="/static/images/svg/credit.svg" />
+            <h3>STEP 2: BUY CREDITS</h3>
+            <p>
+              Buy tuning Tokens safely using PayPal or credit card. Get your
+              invoice straight
+            </p>
+          </div>
         </div>
-        <div>
-          <img src="/static/images/svg/credit.svg" />
-          <h3>STEP 2: BUY CREDITS</h3>
-          <p>
-            Buy tuning Tokens safely using PayPal or credit card. Get your
-            invoice straight
-          </p>
-        </div>
-        <div>
-          <img src="/static/images/svg/service.svg" />
-          <h3>STEP 3: OPEN FILE SERVICE</h3>
-          <p>
-            Buy tuning Tokens safely using PayPal or credit card. Get your
-            invoice straight away
-          </p>
-        </div>
-        <div>
-          <img src="/static/images/svg/turning file.svg" />
-          <h3>STEP 4: DOWNLOAD TUNING FILE</h3>
-          <p>Download your modified chiptuning file</p>
+        <div class="part">
+          <div>
+            <img src="/static/images/svg/service.svg" />
+            <h3>STEP 3: OPEN FILE SERVICE</h3>
+            <p>
+              Buy tuning Tokens safely using PayPal or credit card. Get your
+              invoice straight away
+            </p>
+          </div>
+          <div>
+            <img src="/static/images/svg/turning file.svg" />
+            <h3>STEP 4: DOWNLOAD TUNING FILE</h3>
+            <p>Download your modified chiptuning file</p>
+          </div>
         </div>
       </div>
     </section>
@@ -147,61 +168,65 @@
         </div>
       </div>
     </section>
-    <section class="step">
+    <section id="services" class="step">
       <h2>
         <img src="/static/images/svg/chiptunning.png" />CHIPTUNING FILES SERVICE
       </h2>
       <div class="step-items">
         <div>
-          <img src="/static/images/computer.png" />
-          <h3>WHAT IS CHIP TUNING OR ECU REMAP?</h3>
-          <p>
-            ECU Remapping (Electronic Control Unit tuning) is a process of
-            changing product factory settings made by manufacturers and optimize
-            the settings to add extra performance. Car remapping offers many
-            options that can be improved or remove things like RMP power
-            restrictions, better fuel efficiency, or increase absolute boost and
-            boost delivery. New technology will make your car better and easier
-            to drive.
-          </p>
+          <div>
+            <img src="/static/images/computer.png" />
+            <h3>WHAT IS CHIP TUNING OR ECU REMAP?</h3>
+            <p>
+              ECU Remapping (Electronic Control Unit tuning) is a process of
+              changing product factory settings made by manufacturers and
+              optimize the settings to add extra performance. Car remapping
+              offers many options that can be improved or remove things like RMP
+              power restrictions, better fuel efficiency, or increase absolute
+              boost and boost delivery. New technology will make your car better
+              and easier to drive.
+            </p>
+          </div>
+          <div>
+            <img src="/static/images/portable dyno.png" />
+            <h3>DEVELOPMENT</h3>
+            <p>
+              We are constantly working with our development crew on optimizing
+              our products. Thanks to the continuous improvement process, you
+              can benefit from our past experience today. The elaborate
+              development methods of our highly qualified engineers are the
+              foundation for maximum performance. Analyzed on the racetrack,
+              optimized for the road, customized for you.
+            </p>
+          </div>
         </div>
         <div>
-          <img src="/static/images/portable dyno.png" />
-          <h3>DEVELOPMENT</h3>
-          <p>
-            We are constantly working with our development crew on optimizing
-            our products. Thanks to the continuous improvement process, you can
-            benefit from our past experience today. The elaborate development
-            methods of our highly qualified engineers are the foundation for
-            maximum performance. Analyzed on the racetrack, optimized for the
-            road, customized for you.
-          </p>
-        </div>
-        <div>
-          <img src="/static/images/office.png" />
-          <h3>RICH BRAND VARIETY</h3>
-          <p>
-            Check out our variety of all popular car brands. We tuned engines
-            and improved performance such cars as Alfa Romeo, Alpina, Aston
-            Martin, Audi, BMW, Buick, Cadillac, Chevrolet, Chrysler, Dacia,
-            Daewoo, Ferrari, Fiat, Ford, Infinity, Isuzu, Iveco, Jaguar, Lancia,
-            Land Rover, McLaren, Mercedes Benz, Mini, Mitsubishi, Porsche,
-            Renault, Skoda, Smart, SsangYong, Subaru, Suzuki, Volkswagen, Volvo
-            and many more.
-          </p>
-        </div>
-        <div>
-          <img src="/static/images/iphone.png" />
-          <h3>TESTING DYNO-ROAD</h3>
-          <p>
-            Testing with Dyno-Road: Every product is put through its paces
-            before delivery. You as a Driver can simulate extreme stress
-            situations with our dyno-road equipment, in order to guarantee the
-            stability of the vehicle. Testing On-Road: The drivability of our
-            cars represents the quality of our work. That is why we analyze your
-            driving behavior of the cars through extensive road tests – so that
-            comfort and performance fit together.
-          </p>
+          <div>
+            <img src="/static/images/office.png" />
+            <h3>RICH BRAND VARIETY</h3>
+            <p>
+              Check out our variety of all popular car brands. We tuned engines
+              and improved performance such cars as Alfa Romeo, Alpina, Aston
+              Martin, Audi, BMW, Buick, Cadillac, Chevrolet, Chrysler, Dacia,
+              Daewoo, Ferrari, Fiat, Ford, Infinity, Isuzu, Iveco, Jaguar,
+              Lancia, Land Rover, McLaren, Mercedes Benz, Mini, Mitsubishi,
+              Porsche, Renault, Skoda, Smart, SsangYong, Subaru, Suzuki,
+              Volkswagen, Volvo and many more.
+            </p>
+          </div>
+          <div>
+            <img src="/static/images/iphone.png" />
+            <h3>TESTING DYNO-ROAD</h3>
+            <p>
+              Testing with Dyno-Road: Every product is put through its paces
+              before delivery. You as a Driver can simulate extreme stress
+              situations with our dyno-road equipment, in order to guarantee the
+              stability of the vehicle. Testing On-Road: The drivability of our
+              cars represents the quality of our work. That is why we analyze
+              your driving behavior of the cars through extensive road tests –
+              so that comfort and performance fit together.
+            </p>
+          </div>
         </div>
       </div>
     </section>
@@ -229,7 +254,9 @@
           you want to invest a lot or a little – we will make you the right
           offer.
         </p>
-        <h2><img src="/static/images/svg/cost.svg" />HOW MUCH DOES IT COST?</h2>
+        <h2 id="prices">
+          <img src="/static/images/svg/cost.svg" />HOW MUCH DOES IT COST?
+        </h2>
         <div class="prices-grid">
           <div>
             <p class="title">GEARBOX TUNING STAGE</p>
@@ -302,7 +329,49 @@
       </div>
     </section>
 
-    <section class="contact">
+    <!-- This is the form popup -->
+    <div class="popup" id="form-contact">
+      <div class="popup-content">
+        <a href="#contact" class="popup-close">&times;</a>
+        <p>Fill this form and we will puit in contact with you</p>
+        <form method="post" enctype="multipart/form-data">
+          <div>
+            <div>
+              <label for="fname">Full name</label>
+              <input type="text" name="fname" required />
+            </div>
+            <div>
+              <label for="fcontact">Contact</label>
+              <input type="text" name="fcontact" required />
+            </div>
+          </div>
+          <div>
+            <label for="fmessage">Message</label>
+            <textarea name="fmessage" rows="10"></textarea>
+          </div>
+          <input type="submit" />
+        </form>
+        <!-- <a href="#contact">
+          <button>Done</button>
+        </a> -->
+      </div>
+    </div>
+
+    <!-- This is the OK feedback popup -->
+    <div class="popup" id="good-feedback">
+      <div style="padding-bottom: 6rem" class="popup-content">
+        <a href="#contact" class="popup-close">&times;</a>
+        <p>Your form has been send!</p>
+        <div style="text-align: center">
+          <img src="/static/svg/good-feedback.svg" alt="" />
+        </div>
+        <a href="#contact">
+          <button>Done</button>
+        </a>
+      </div>
+    </div>
+
+    <section id="contact" class="contact">
       <div class="grid">
         <div>
           <h2>Contact <span>us</span></h2>
@@ -315,7 +384,6 @@
             <p>hello@ap-chip.com</p>
           </div>
         </div>
-
         <div>
           <h2>Become our <span>dealer</span></h2>
           <p class="join-us">
@@ -323,12 +391,13 @@
             Performance partner program. Go to the Become our Dealer subpage and
             find out more about the benefits you will gain joining the program.
           </p>
-          <div class="button button-join">
-            <img src="/static/images/svg/fingerprint.svg" alt="" />
-            <p>Become our Dealer</p>
-          </div>
+          <a href="#form-contact" class="disable-link">
+            <div class="button button-join">
+              <img src="/static/images/svg/fingerprint.svg" alt="" />
+              <p>Become our Dealer</p>
+            </div>
+          </a>
         </div>
-
         <div class="instagram">
           <h2>Ask our clients</h2>
           <img src="/static/images/insta.png" />
@@ -347,6 +416,5 @@
         </div>
       </div>
     </section>
-    {{template "cookies-consent.html" .}}
   </body>
 </html>

@@ -1,8 +1,8 @@
 package main
 
 import (
+	"fmt"
 	"net/http"
-	"os"
 
 	"github.com/gin-gonic/gin"
 	i18n "github.com/suisrc/gin-i18n"
@@ -12,10 +12,6 @@ import (
 // Check tutorial for GO templates
 // https://blog.gopheracademy.com/advent-2017/using-go-templates/
 // https://medium.com/@IndianGuru/understanding-go-s-template-package-c5307758fab0
-var (
-	// BasePath is the path to the project
-	BasePath = os.Getenv("GOPATH") + "/src/github.com/kiketordera/advanced-performance"
-)
 
 func main() {
 	// We create the instance for Gin
@@ -37,28 +33,21 @@ func main() {
 		"text/es.toml",
 	)
 
-	// If the user did not set up the GOPATH the program will panic. We print in the console in red letters what the user should type to fix it
-	// defer func() {
-	// 	if r := recover(); r != nil {
-	// 		fmt.Println("Try writing the GOPATH with: ")
-	// 		fmt.Println("\033[31mexport GOPATH=$HOME/go\033[37m")
-	// 	}
-	// }()
-
 	// Tell Gin to use our middleware. This means that in every single request (GET, POST...), the call to i18n will be executed
 	r.Use(i18n.Serve(bundle))
 
 	// Path to the static files. /static is rendered in the HTML and /media is the link to the path to the  images, svg, css.. the static files
 	r.StaticFS("/static", http.Dir("media"))
 
-	// Path to the HTML templates
-	r.LoadHTMLGlob(BasePath + "/*.html")
+	// Path to the HTML templates. * is a wildcard
+	r.LoadHTMLGlob("*.html")
 
 	// Redirects when users introduces a wrong URL
 	r.NoRoute(redirect)
 
 	// This get executed when the users gets into our website in the home domain ("/")
 	r.GET("/", renderHome)
+	r.POST("/", getForm)
 	// Listen and serve on 0.0.0.0:8080 (for windows "localhost:8080")
 
 	r.Run()
@@ -71,6 +60,24 @@ func renderHome(c *gin.Context) {
 	c.HTML(http.StatusOK, "index.html", gin.H{
 		"hi": i18n.FormatMessage(c, &i18n.Message{ID: "hi"}, nil),
 	})
+}
+
+/*
+This method get the form from the HTML, and makes a safe validation of the camps
+*/
+func getForm(c *gin.Context) {
+	// Safe validation with anonymous struct
+	formData := &struct {
+		Name    string `form:"fname" binding:"required"`
+		Contact string `form:"fcontact" binding:"required"`
+		Message string `form:"fmessage"`
+	}{}
+	if err := c.ShouldBind(formData); err != nil {
+		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
+		return
+	}
+	fmt.Print("This is the struct: ", formData)
+	c.Redirect(http.StatusFound, "#good-feedback")
 }
 
 // Redirects to the home route when the users type an URL inside our domain that does not exists

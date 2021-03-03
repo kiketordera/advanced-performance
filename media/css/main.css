@@ -7,6 +7,7 @@
 
 * {
   font-family: "Mulish", sans-serif;
+  scroll-behavior: smooth;
 }
 
 html {
@@ -45,6 +46,18 @@ nav {
   width: 100%;
 }
 
+@media (max-width: 550px) {
+  nav {
+    margin-left: -3rem;
+    padding-right: 3rem;
+  }
+}
+
+nav a {
+  text-decoration: none;
+  color: inherit;
+}
+
 nav ul {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -74,12 +87,25 @@ nav div {
 nav div p {
   margin-right: 2rem;
   font-size: 1.7rem;
+  white-space: nowrap;
+}
+
+@media (max-width: 645px) {
+  nav div p {
+    display: none;
+  }
 }
 
 nav div img {
   max-width: 4rem;
   max-height: 3rem;
   margin-right: 2rem;
+}
+
+@media (max-width: 500px) {
+  nav div img {
+    display: none;
+  }
 }
 
 #myVideo {
@@ -110,6 +136,8 @@ section.first-section {
   color: white;
   text-align: center;
   margin-top: -1px;
+  padding-left: 2rem;
+  padding-right: 2rem;
 }
 
 section.first-section p {
@@ -120,12 +148,10 @@ section.first-section p {
 }
 
 section.first-section img {
-  width: 90%;
-  max-width: 85rem;
-  padding-right: 2rem;
-  padding-left: 2rem;
+  width: 100%;
+  max-width: 95rem;
   padding-bottom: 5rem;
-  margin-top: 14rem;
+  margin-top: 7rem;
 }
 
 h2 {
@@ -167,11 +193,31 @@ hr {
 .steps-items p {
   max-width: 21rem;
   font-size: 1.4rem;
+  margin: 0 auto;
 }
 
 .steps-items img {
   max-width: 7rem;
   max-height: 7rem;
+}
+
+.steps-items .part {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+@media (max-width: 750px) {
+  .steps-items .part {
+    display: block;
+  }
+}
+
+.steps-items .part div:first-child {
+  margin-bottom: 3rem;
 }
 
 .steps-items div {
@@ -193,10 +239,22 @@ hr {
   max-height: 40rem;
 }
 
+@media (max-width: 1100px) {
+  .how-works div {
+    max-height: 50rem;
+  }
+}
+
+@media (max-width: 650px) {
+  .how-works div {
+    max-height: none;
+  }
+}
+
 .how-works div .text {
   display: block;
   color: white;
-  padding: 3rem;
+  padding: 2rem;
   width: 100%;
 }
 
@@ -242,6 +300,15 @@ section.step .step-items {
 
 section.step .step-items div {
   margin: 2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+@media (max-width: 950px) {
+  section.step .step-items div {
+    display: block;
+  }
 }
 
 @media (max-width: 1150px) {
@@ -250,8 +317,19 @@ section.step .step-items div {
   }
 }
 
+section.step .step-items div div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
 section.step .step-items div p {
   max-width: 45rem;
+  font-size: 1.6rem;
 }
 
 section.step .step-items div h3 {
@@ -265,18 +343,22 @@ section.step .step-items div img {
 section.optimise {
   color: white;
   background-color: var(--background-dark-grey);
+  padding-left: 1rem;
+  padding-right: 1rem;
   padding-bottom: 10px;
 }
 
 section.optimise h2 {
   text-align: left;
+  margin-top: 5rem;
   margin-bottom: 3rem;
 }
 
 section.optimise h2 img {
   max-width: 7rem;
   margin-left: 5rem;
-  margin-right: 1rem;
+  margin-right: 2rem;
+  margin-bottom: -1rem;
 }
 
 section.optimise p {
@@ -291,6 +373,8 @@ section.optimise .optimise-item p {
   max-width: 150rem;
   margin: 0 auto;
   font-size: 1.7rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
 }
 
 section.optimise .prices-grid {
@@ -317,6 +401,12 @@ section.optimise .prices-grid div {
   background-color: black;
   padding: 2rem;
   font-size: 1.5rem;
+}
+
+@media (max-width: 550px) {
+  section.optimise .prices-grid div {
+    padding: 0.9rem;
+  }
 }
 
 section.optimise .prices-grid div p.title {
@@ -383,6 +473,12 @@ section.contact .grid div {
   background-color: white;
   padding: 3rem;
   text-align: center;
+}
+
+@media (max-width: 1150px) {
+  section.contact .grid div {
+    padding: 1rem;
+  }
 }
 
 section.contact .grid div p {
@@ -502,5 +598,116 @@ section.contact .grid .instagram div img {
   max-width: 100%;
   -o-object-fit: cover;
      object-fit: cover;
+}
+
+img {
+  max-width: 100%;
+}
+
+#services {
+  margin-top: -6rem;
+  padding-top: 6rem;
+}
+
+#prices {
+  margin-top: -4rem;
+  padding-top: 11rem;
+}
+
+.disable-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* For change the view of the information text */
+.popup {
+  background-color: rgba(0, 0, 0, 0.6);
+  position: fixed;
+  width: 100%;
+  height: 150%;
+  top: 0px;
+  left: 0px;
+  z-index: 500;
+  visibility: hidden;
+  overflow: hidden;
+  -webkit-backdrop-filter: blur(5px);
+  backdrop-filter: blur(5px);
+}
+
+.popup:target {
+  visibility: visible;
+}
+
+.popup-content {
+  margin: 0 auto;
+  margin-top: 11vh;
+  padding: 10px;
+  border-radius: 15px;
+  color: black;
+  background-color: #ffffff;
+  width: 60%;
+  max-width: 600px;
+}
+
+.popup-content a:hover {
+  text-decoration: none;
+  color: inherit;
+}
+
+.popup-content p {
+  font-size: 1.9rem;
+  margin-left: 2rem;
+  font-weight: 500;
+  text-align: center;
+}
+
+.popup-content button {
+  background-color: var(--orange);
+  border: none;
+  float: right;
+  color: white;
+  font-size: 1.8rem;
+  font-weight: 500;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  margin-top: 2rem;
+}
+
+.popup-content form {
+  margin: 0 2rem;
+}
+
+.popup-content form label {
+  font-size: 1.5rem;
+}
+
+.popup-content form input,
+.popup-content form textarea {
+  width: 100%;
+  margin-top: 0.3rem;
+  margin-bottom: 1rem;
+}
+
+.popup-content form input[type="submit"] {
+  background-color: var(--orange);
+  border: none;
+  border-radius: 0.5rem;
+  color: white;
+  font-size: 1.8rem;
+  width: 101%;
+  margin-top: 1rem;
+  padding: 1rem 0rem;
+}
+
+.popup-close:visited, .popup-close:link {
+  font-size: 40px;
+  text-decoration: none;
+  color: inherit;
+  margin-top: -15px;
+  margin-right: 0px;
+  float: right;
+  line-height: 1;
+  font-weight: 100;
 }
 /*# sourceMappingURL=main.css.map */

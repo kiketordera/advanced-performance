@@ -4,6 +4,7 @@ go 1.16
 
 require (
 	github.com/gin-gonic/gin v1.6.3
+	github.com/gookit/validate v1.2.8 // indirect
 	github.com/suisrc/gin-i18n v0.1.1
 	golang.org/x/text v0.3.5
 )

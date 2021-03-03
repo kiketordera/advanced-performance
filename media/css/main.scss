@@ -9,6 +9,7 @@
 // Universal selector, you select all elements and apply same typography
 * {
   font-family: "Mulish", sans-serif;
+  scroll-behavior: smooth;
 }
 
 // All the project is designed on rem instead of px, that means that ell elements that are measures in the rem unit (which substitues the px unit), are pointing to the font-size of the html{} tag. So thanks to that, we can make here the media queries for handeling the different sizes of the screens, and since all rem units are pointing to this font-size attribute, when we change it here, we change it in the wholen rem units across the project
@@ -35,10 +36,18 @@ nav {
   justify-content: space-between;
   position: fixed;
   width: 100%;
-
+  @media (max-width: 550px) {
+    margin-left: -3rem;
+    padding-right: 3rem;
+  }
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
   & ul {
     display: flex;
     align-items: center;
+
     li {
       display: inline-block;
       font-size: 1.7rem;
@@ -53,12 +62,18 @@ nav {
     p {
       margin-right: 2rem;
       font-size: 1.7rem;
+      white-space: nowrap;
+      @media (max-width: 645px) {
+        display: none;
+      }
     }
-
     img {
       max-width: 4rem;
       max-height: 3rem;
       margin-right: 2rem;
+      @media (max-width: 500px) {
+        display: none;
+      }
     }
   }
 }
@@ -91,6 +106,8 @@ section.first-section {
   color: white;
   text-align: center;
   margin-top: -1px;
+  padding-left: 2rem;
+  padding-right: 2rem;
   p {
     margin: 0 auto; //This is how you center an object horizontally
     font-size: 1.7rem;
@@ -98,12 +115,10 @@ section.first-section {
     margin-bottom: 2rem;
   }
   img {
-    width: 90%;
-    max-width: 85rem;
-    padding-right: 2rem;
-    padding-left: 2rem;
+    width: 100%;
+    max-width: 95rem;
     padding-bottom: 5rem;
-    margin-top: 14rem;
+    margin-top: 7rem;
   }
 }
 
@@ -122,6 +137,7 @@ hr {
 
 .steps {
   padding: 2rem;
+
   background-color: black;
   color: white;
   h2 {
@@ -136,10 +152,22 @@ hr {
     p {
       max-width: 21rem;
       font-size: 1.4rem;
+      margin: 0 auto;
     }
     img {
       max-width: 7rem;
       max-height: 7rem;
+    }
+    .part {
+      display: flex;
+      width: 100%;
+      justify-content: space-around;
+      @media (max-width: 750px) {
+        display: block;
+      }
+      div:first-child {
+        margin-bottom: 3rem;
+      }
     }
     div {
       text-align: center;
@@ -164,10 +192,16 @@ hr {
   div {
     display: flex;
     max-height: 40rem;
+    @media (max-width: 1100px) {
+      max-height: 50rem;
+    }
+    @media (max-width: 650px) {
+      max-height: none;
+    }
     .text {
       display: block;
       color: white;
-      padding: 3rem;
+      padding: 2rem;
       width: 100%;
       h3 {
         font-size: 1.9rem;
@@ -181,12 +215,12 @@ hr {
     }
     img {
       width: 50%;
+
       object-fit: cover;
     }
   }
 }
 
-// ********************************************************************************************** YOUR CODE STARTS FROM HERE *********************************************************************************************************************************************  /
 section.step {
   color: white;
   background-color: var(--background-dark-grey);
@@ -202,11 +236,20 @@ section.step {
     justify-content: center;
     div {
       margin: 2rem;
+      display: flex;
+      @media (max-width: 950px) {
+        display: block;
+      }
       @media (max-width: 1150px) {
         margin: 1rem;
       }
+      div {
+        display: flex;
+        flex-direction: column;
+      }
       p {
         max-width: 45rem;
+        font-size: 1.6rem;
       }
       h3 {
         font-size: 2rem;
@@ -221,13 +264,17 @@ section.step {
 section.optimise {
   color: white;
   background-color: var(--background-dark-grey);
+  padding-left: 1rem;
+  padding-right: 1rem;
   padding-bottom: 10px;
   h2 {
     text-align: left;
+    margin-top: 5rem;
     img {
       max-width: 7rem;
       margin-left: 5rem;
-      margin-right: 1rem;
+      margin-right: 2rem;
+      margin-bottom: -1rem;
     }
     margin-bottom: 3rem;
   }
@@ -243,6 +290,8 @@ section.optimise {
       max-width: 150rem;
       margin: 0 auto;
       font-size: 1.7rem;
+      padding-left: 2rem;
+      padding-right: 2rem;
     }
   }
   .prices-grid {
@@ -260,6 +309,9 @@ section.optimise {
     div {
       background-color: black;
       padding: 2rem;
+      @media (max-width: 550px) {
+        padding: 0.9rem;
+      }
       font-size: 1.5rem;
       p.title {
         font-family: "Bungee", cursive;
@@ -310,6 +362,9 @@ section.contact {
       border: solid 2px var(--dark-orange);
       background-color: white;
       padding: 3rem;
+      @media (max-width: 1150px) {
+        padding: 1rem;
+      }
       text-align: center;
       p {
         max-width: 55rem;
@@ -389,6 +444,118 @@ section.contact {
           object-fit: cover;
         }
       }
+    }
+  }
+}
+
+img {
+  max-width: 100%;
+}
+
+#services {
+  margin-top: -6rem;
+  padding-top: 6rem;
+}
+
+#prices {
+  margin-top: -4rem;
+  padding-top: 11rem;
+}
+
+.disable-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* For change the view of the information text */
+.popup {
+  background-color: rgba(0, 0, 0, 0.6);
+  position: fixed;
+  width: 100%;
+  height: 150%;
+  top: 0px;
+  left: 0px;
+  z-index: 500;
+  visibility: hidden;
+  overflow: hidden;
+  -webkit-backdrop-filter: blur(5px);
+  backdrop-filter: blur(5px);
+
+  &:target {
+    visibility: visible;
+  }
+  &-content {
+    margin: 0 auto;
+    margin-top: 11vh;
+    padding: 10px;
+    // padding-bottom: 6rem; // This is for inserting the botton button
+    border-radius: 15px;
+    color: black;
+    background-color: #ffffff;
+    width: 60%;
+    max-width: 600px;
+    & a:hover {
+      text-decoration: none;
+      color: inherit;
+    }
+    p {
+      font-size: 1.9rem;
+      margin-left: 2rem;
+      font-weight: 500;
+      text-align: center;
+    }
+    button {
+      background-color: var(--orange);
+      border: none;
+      float: right;
+      color: white;
+      font-size: 1.8rem;
+      font-weight: 500;
+      border-radius: 0.5rem;
+      cursor: pointer;
+      padding: 0.5rem 1rem;
+      margin-top: 2rem;
+    }
+    form {
+      margin: 0 2rem;
+      label {
+        font-size: 1.5rem;
+      }
+      input,
+      textarea {
+        width: 100%;
+        margin-top: 0.3rem;
+        margin-bottom: 1rem;
+      }
+      input[type="submit"] {
+        background-color: var(--orange);
+        border: none;
+        border-radius: 0.5rem;
+        color: white;
+        font-size: 1.8rem;
+        width: 101%;
+        margin-top: 1rem;
+        padding: 1rem 0rem;
+      }
+    }
+  }
+  &-close {
+    &:visited,
+    &:link {
+      font-size: 40px;
+      text-decoration: none;
+      color: inherit;
+      margin-top: -15px;
+      margin-right: 0px;
+      float: right;
+      line-height: 1;
+      font-weight: 100;
+    }
+    &:hover {
+      // transform: rotate(90deg);
+
+      // translate: (-100%);
+      // transform-origin: 4px 5px;
     }
   }
 }

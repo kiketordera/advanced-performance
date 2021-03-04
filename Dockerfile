@@ -14,8 +14,8 @@ RUN CGO_ENABLED=0 GOOS=linux go build -a -installsuffix cgo -ldflags="-w -s" -o 
 
 FROM scratch
 COPY --from=builder /go/bin/advanced-performance /advanced-performance
-COPY --from=builder /go/src/github.com/kiketordera/advanced-performance/media/ /go/src/github.com/kiketordera/advanced-performance/media/
-
+COPY --from=builder /go/src/github.com/kiketordera/advanced-performance/media/ /media/
+COPY --from=builder /go/src/github.com/kiketordera/advanced-performance/*.html /
 # For email certificate
 VOLUME /etc/ssl/certs/ca-certificates.crt:/etc/ssl/certs/ca-certificates.crt
 COPY --from=alpine /etc/ssl/certs/ca-certificates.crt /etc/ssl/certs/
@@ -24,4 +24,3 @@ EXPOSE 8050/tcp
 
 ENV GOPATH /go
 ENTRYPOINT ["/advanced-performance"]
-

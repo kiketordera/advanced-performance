@@ -29,8 +29,8 @@ func main() {
 	*/
 	bundle := i18n.NewBundle(
 		language.English,
-		"text/en.toml",
-		"text/es.toml",
+		"media/text/en.toml",
+		"media/text/es.toml",
 	)
 
 	// Tell Gin to use our middleware. This means that in every single request (GET, POST...), the call to i18n will be executed
@@ -48,9 +48,9 @@ func main() {
 	// This get executed when the users gets into our website in the home domain ("/")
 	r.GET("/", renderHome)
 	r.POST("/", getForm)
-	// Listen and serve on 0.0.0.0:8080 (for windows "localhost:8080")
+	// Listen and serve on 0.0.0.0:8050 (for windows "localhost:8050")
 
-	r.Run()
+	r.Run(":8050")
 }
 
 /* Renders the landing page and it passes the parameters that will be rendered in the HTML.

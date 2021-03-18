@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    {{template "header" .}}
+    <title>Advanced Performance</title>
+  </head>
+  <body>
+    {{template "navbar" .}}
+    <section class="first-section">
+      <h2>CHIP TUNING - ECU REMAP</h2>
+      <br />
+      <hr />
+      <picture>
+        <source
+          class="padding-5"
+          alt="Advanced Performance graph"
+          loading="lazy"
+          srcset="
+            /static/svg/graph-small.svg 1x,
+            /static/svg/graph-small.svg 2x
+          "
+          media="(max-width: 750px)"
+        />
+        <img
+          class="padding-5"
+          loading="lazy"
+          srcset="/static/svg/main-graph.svg 1x, /static/svg/main-graph.svg 2x"
+          alt="Advanced Performance graph"
+        />
+        <!-- <figcaption class="story__caption">Caption of the image</figcaption> -->
+      </picture>
+    </section>
+    <section class="steps">
+      <h2>BUY TUNING FILES IN 4 QUICK, SAFE AND EASY STEPS</h2>
+      <div class="steps-items">
+        <div class="part">
+          <div>
+            <img src="/static/images/svg/user.svg" />
+            <h3>STEP 1: REGISTER</h3>
+            <p>
+              Register your account free of charge. Registration is obligatory
+              if you want to upload and recieve chiptuning files..
+            </p>
+          </div>
+          <div>
+            <img src="/static/images/svg/credit.svg" />
+            <h3>STEP 2: BUY CREDITS</h3>
+            <p>
+              Buy tuning Tokens safely using PayPal or credit card. Get your
+              invoice straight
+            </p>
+          </div>
+        </div>
+        <div class="part">
+          <div>
+            <img src="/static/images/svg/service.svg" />
+            <h3>STEP 3: OPEN FILE SERVICE</h3>
+            <p>
+              Buy tuning Tokens safely using PayPal or credit card. Get your
+              invoice straight away
+            </p>
+          </div>
+          <div>
+            <img src="/static/images/svg/turning file.svg" />
+            <h3>STEP 4: DOWNLOAD TUNING FILE</h3>
+            <p>Download your modified chiptuning file</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="optimise">
+      <div class="optimise-item">
+        <h2 id="prices">
+          <img src="/static/images/svg/cost.svg" />HOW MUCH DOES IT COST?
+        </h2>
+        <div class="prices-grid">
+          <div>
+            <p class="title">GEARBOX TUNING STAGE</p>
+            <p class="price">260€</p>
+            <p class="offer">Contains</p>
+            <hr />
+            <ul>
+              <li>Internal Torque</li>
+              <li>Launchcontrole RPM</li>
+              <li>Shifting speed D+S+M Upshift/downshift reduced</li>
+              <li>Modified take-off</li>
+            </ul>
+          </div>
+          <div>
+            <p class="title">Stage 1 by OBD</p>
+            <p class="price">349€</p>
+            <p class="offer">Contains</p>
+            <hr />
+            <ul>
+              <li>Bench from 150€ (extra)</li>
+              <li>BOOT on request</li>
+              <li>Trucks and Cars</li>
+              <li>Extra services* from 50€</li>
+            </ul>
+          </div>
+
+          <div>
+            <p class="title">Stage 3</p>
+            <p class="price">350€</p>
+            <p class="offer">Contains</p>
+            <hr />
+            <ul>
+              <li>Hybrid/upgrade turbos</li>
+              <li>Dekat or DPF/EGR off on request</li>
+            </ul>
+          </div>
+          <div>
+            <p class="title">Stage 2 by OBD</p>
+            <p class="price">499€</p>
+            <p class="offer">Contains</p>
+            <hr />
+            <ul>
+              <li>Include EGR+DPF off or DECAT</li>
+              <li>Bench from 150€ (extra)</li>
+              <li>BOOT on request</li>
+              <li>Extra services* from 50€</li>
+            </ul>
+          </div>
+          <div class="extra">
+            <p class="title">Extra services (Stages 1-2-3)</p>
+            <ul>
+              <li>VMAX OFF from 50€ (without tuning 120€)</li>
+              <li>ADBLUE OFF from 120€ (without tuning 240€)</li>
+              <li>START/STOP System off from 20€ (without tuning 60€)</li>
+              <li>Pops and Bangs from 260€ (only DEKAT Stage 2)</li>
+              <li>Launch Control from 60€ (without Tuning 120€)</li>
+              <li>Warm and Cold Startt off from 50€ (only stage 2)</li>
+            </ul>
+          </div>
+          <div class="extra">
+            <p class="title">Extra services (Stage 2)</p>
+            <ul>
+              <li>Include EGR+DPF off or DECAT</li>
+              <li>Bench from 150€ (extra)</li>
+              <li>BOOT on request</li>
+              <li>Extra services* from 50€</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- This is the form popup -->
+    <div class="popup" id="form-contact">
+      <div class="popup-content">
+        <a href="#contact" class="popup-close">&times;</a>
+        <p>Fill this form and we will puit in contact with you</p>
+        <form method="post" enctype="multipart/form-data">
+          <div>
+            <div>
+              <label for="fname">Full name</label>
+              <input type="text" name="fname" required />
+            </div>
+            <div>
+              <label for="fcontact">Contact</label>
+              <input type="text" name="fcontact" required />
+            </div>
+          </div>
+          <div>
+            <label for="fmessage">Message</label>
+            <textarea name="fmessage" rows="10"></textarea>
+          </div>
+          <input type="submit" />
+        </form>
+        <!-- <a href="#contact">
+          <button>Done</button>
+        </a> -->
+      </div>
+    </div>
+
+    <!-- This is the OK feedback popup -->
+    <div class="popup" id="good-feedback">
+      <div style="padding-bottom: 6rem" class="popup-content">
+        <a href="#contact" class="popup-close">&times;</a>
+        <p>Your form has been send!</p>
+        <div style="text-align: center">
+          <img src="/static/svg/good-feedback.svg" alt="" />
+        </div>
+        <a href="#contact">
+          <button>Done</button>
+        </a>
+      </div>
+    </div>
+
+    <section id="contact" class="contact">
+      <div class="grid">
+        <div>
+          <h2>Contact <span>us</span></h2>
+          <div>
+            <img src="/static/images/svg/whatsapp.svg" alt="" />
+            <p>+44 77 94 234 052</p>
+          </div>
+          <div>
+            <img src="/static/images/svg/envelope.svg" alt="" />
+            <p>hello@ap-chip.com</p>
+          </div>
+        </div>
+        <div>
+          <h2>Become our <span>dealer</span></h2>
+          <p class="join-us">
+            Join us and take advantage of the opportunities offered by the TC
+            Performance partner program. Go to the Become our Dealer subpage and
+            find out more about the benefits you will gain joining the program.
+          </p>
+          <a href="#form-contact" class="disable-link">
+            <div class="button button-join">
+              <img src="/static/images/svg/fingerprint.svg" alt="" />
+              <p>Become our Dealer</p>
+            </div>
+          </a>
+        </div>
+        <div class="instagram">
+          <h2>Ask our clients</h2>
+          <img src="/static/images/insta.png" />
+          <div class="grid-cars">
+            <img src="/static/images/red-ferrari.png" alt="" />
+            <img src="/static/images/black-car.png" alt="" />
+            <img src="/static/images/black-ferrari.png" alt="" />
+            <img src="/static/images/yellow-ferrari.png" alt="" />
+            <img src="/static/images/prado.png" alt="" />
+            <img src="/static/images/lambokin.png" alt="" />
+          </div>
+          <div class="button">
+            <img src="/static/images/svg/fingerprint.svg" alt="" />
+            <p>Follow us</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>

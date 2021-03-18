@@ -108,6 +108,7 @@ section.first-section {
   margin-top: -1px;
   padding-left: 2rem;
   padding-right: 2rem;
+  padding-bottom: 2rem;
   p {
     margin: 0 auto; //This is how you center an object horizontally
     font-size: 1.7rem;
@@ -269,7 +270,8 @@ section.optimise {
   padding-bottom: 10px;
   h2 {
     text-align: left;
-    margin-top: 5rem;
+    // margin-top: 5rem;
+    padding-top: 2rem;
     img {
       max-width: 7rem;
       margin-left: 5rem;
@@ -459,7 +461,7 @@ img {
 
 #prices {
   margin-top: -4rem;
-  padding-top: 11rem;
+  padding-top: 8rem;
 }
 
 .disable-link {

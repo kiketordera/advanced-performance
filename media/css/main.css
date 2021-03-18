@@ -138,6 +138,7 @@ section.first-section {
   margin-top: -1px;
   padding-left: 2rem;
   padding-right: 2rem;
+  padding-bottom: 2rem;
 }
 
 section.first-section p {
@@ -350,7 +351,7 @@ section.optimise {
 
 section.optimise h2 {
   text-align: left;
-  margin-top: 5rem;
+  padding-top: 2rem;
   margin-bottom: 3rem;
 }
 
@@ -611,7 +612,7 @@ img {
 
 #prices {
   margin-top: -4rem;
-  padding-top: 11rem;
+  padding-top: 8rem;
 }
 
 .disable-link {

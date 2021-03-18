@@ -1,55 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width" , initial-scale="1.0" />
-    <meta http-equiv="X-UA-compatible" content="ie=edge" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Mulish:wght@300;400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Bungee&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Bungee&family=Bungee+Outline&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="/static/css/main.css" />
+    {{template "header" .}}
     <title>Advanced Performance</title>
   </head>
   <body>
-    <nav>
-      <ul>
-        <li>
-          <img
-            src="/static/images/svg/logo.svg"
-            alt="performance logo"
-            class="logo"
-          />
-        </li>
-        <li><a href="#about"> ABOUT</a></li>
-        <li><a href="#services"> SERVICES</a></li>
-        <li><a href="#prices" class=""> PRICES</a></li>
-        <li><a href="#contact" class=""> CONTACT</a></li>
-      </ul>
-      <div>
-        <img src="/static/images/svg/telephone.svg" />
-        <p>+44 77 94 234 052</p>
-        <!-- <img src="/static/images/svg/uruguay.svg" />
-        <img src="/static/images/svg/america.svg" /> -->
-      </div>
-    </nav>
-
-    <video loop autoplay muted playsinline id="myVideo">
-      <source src="/static/video/ap.mov" type="video/mp4" />
-    </video>
-    <a id="about" href="" class="" style="text-align: right">
-      <img src="/static/svg/instagram.svg" alt="" class="instagram-video" />
-    </a>
-
+    {{template "navbar" .}}
     <section class="first-section">
       <h2>WHAT IS CHIP TUNING OR ECU REMAP?</h2>
       <br />
@@ -70,64 +26,6 @@
         professional engineers and mechanics have developed custom chiptuning
         Stage 1, Stage 2, Stage 3 and Stage 4.
       </p>
-      <picture>
-        <source
-          class="padding-5"
-          alt="Value Villages project web app"
-          loading="lazy"
-          srcset="
-            /static/svg/graph-small.svg 1x,
-            /static/svg/graph-small.svg 2x
-          "
-          media="(max-width: 750px)"
-        />
-        <img
-          class="padding-5"
-          loading="lazy"
-          srcset="/static/svg/main-graph.svg 1x, /static/svg/main-graph.svg 2x"
-          alt="Advanced Performance graph"
-        />
-        <!-- <figcaption class="story__caption">Caption of the image</figcaption> -->
-      </picture>
-    </section>
-
-    <section class="steps">
-      <h2>BUY TUNING FILES IN 4 QUICK, SAFE AND EASY STEPS</h2>
-      <div class="steps-items">
-        <div class="part">
-          <div>
-            <img src="/static/images/svg/user.svg" />
-            <h3>STEP 1: REGISTER</h3>
-            <p>
-              Register your account free of charge. Registration is obligatory
-              if you want to upload and recieve chiptuning files..
-            </p>
-          </div>
-          <div>
-            <img src="/static/images/svg/credit.svg" />
-            <h3>STEP 2: BUY CREDITS</h3>
-            <p>
-              Buy tuning Tokens safely using PayPal or credit card. Get your
-              invoice straight
-            </p>
-          </div>
-        </div>
-        <div class="part">
-          <div>
-            <img src="/static/images/svg/service.svg" />
-            <h3>STEP 3: OPEN FILE SERVICE</h3>
-            <p>
-              Buy tuning Tokens safely using PayPal or credit card. Get your
-              invoice straight away
-            </p>
-          </div>
-          <div>
-            <img src="/static/images/svg/turning file.svg" />
-            <h3>STEP 4: DOWNLOAD TUNING FILE</h3>
-            <p>Download your modified chiptuning file</p>
-          </div>
-        </div>
-      </div>
     </section>
 
     <section class="how-works">

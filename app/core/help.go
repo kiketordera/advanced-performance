@@ -10,6 +10,7 @@ import (
 	"strconv"
 	"strings"
 
+	"github.com/gin-contrib/secure"
 	"github.com/gin-gonic/gin"
 	"github.com/go-playground/validator/v10"
 	sanitizer "github.com/go-sanitize/sanitize"
@@ -152,4 +153,23 @@ func CopyDirectory(src string, dst string) error {
 		}
 	}
 	return nil
+}
+
+// Returns a secure middleware that helps us to protect our app. We will need to change the values to deply it
+func SecureMiddleware() gin.HandlerFunc {
+	return secure.New(secure.Config{
+		AllowedHosts:          []string{"example.com", "ssl.example.com"},
+		SSLRedirect:           true,
+		SSLHost:               "ssl.example.com",
+		STSSeconds:            315360000,
+		STSIncludeSubdomains:  true,
+		FrameDeny:             true,
+		ContentTypeNosniff:    true,
+		BrowserXssFilter:      true,
+		ContentSecurityPolicy: "default-src 'self'",
+		IENoOpen:              true,
+		ReferrerPolicy:        "strict-origin-when-cross-origin",
+		SSLProxyHeaders:       map[string]string{"X-Forwarded-Proto": "https"},
+		IsDevelopment:         true,
+	})
 }

@@ -1,26 +1,33 @@
-FROM golang:alpine as builder
+FROM golang:alpine
 
-RUN apk update && apk add git && apk add ca-certificates 
-# For email certificate
-RUN apk add -U --no-cache ca-certificates
+# Set necessary environmet variables needed for our image
+ENV GO111MODULE=on \
+    CGO_ENABLED=0 \
+    GOOS=linux \
+    GOARCH=amd64
 
-COPY . $GOPATH/src/github.com/kiketordera/advanced-performance/
-WORKDIR $GOPATH/src/github.com/kiketordera/advanced-performance/
+# Copy the code into the container
+COPY media .
 
-RUN go get -d -v $GOPATH/src/github.com/kiketordera/advanced-performance
+# Move to working directory /build
+WORKDIR /build
 
-# For Cloud Server
-RUN CGO_ENABLED=0 GOOS=linux go build -a -installsuffix cgo -ldflags="-w -s" -o /go/bin/advanced-performance $GOPATH/src/github.com/kiketordera/advanced-performance
+# Copy the code from /app to the build folder into the container
+COPY app .
 
-FROM scratch
-COPY --from=builder /go/bin/advanced-performance /advanced-performance
-COPY --from=builder /go/src/github.com/kiketordera/advanced-performance/media/ /media/
-COPY --from=builder /go/src/github.com/kiketordera/advanced-performance/*.html /
-# For email certificate
-VOLUME /etc/ssl/certs/ca-certificates.crt:/etc/ssl/certs/ca-certificates.crt
-COPY --from=alpine /etc/ssl/certs/ca-certificates.crt /etc/ssl/certs/
+# Configure the build (go.mod and go.sum are already copied with prior step)
+RUN go mod download
 
-EXPOSE 8050/tcp
+# Build the application
+RUN go build -o main .
 
-ENV GOPATH /go
-ENTRYPOINT ["/advanced-performance"]
+WORKDIR /app
+
+# Copy binary from build to main folder
+RUN cp /build/main .
+
+# Export necessary port
+EXPOSE 8040
+
+# Command to run when starting the container
+CMD ["/app/main"]

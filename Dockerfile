@@ -4,10 +4,11 @@ FROM golang:alpine
 ENV GO111MODULE=on \
     CGO_ENABLED=0 \
     GOOS=linux \
-    GOARCH=amd64
+    GOARCH=amd64\
+    GIN_MODE=release
 
 # Copy the code into the container
-COPY media .
+COPY media /media/
 
 # Move to working directory /build
 WORKDIR /build
@@ -27,7 +28,7 @@ WORKDIR /app
 RUN cp /build/main .
 
 # Export necessary port
-EXPOSE 8040
+EXPOSE 8050
 
 # Command to run when starting the container
 CMD ["/app/main"]

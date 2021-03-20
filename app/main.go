@@ -26,7 +26,7 @@ func main() {
 
 	webHandler := _controllers.NewWebHandler(repo, login, mail)
 
-	// Init the router, listen and serve on 0.0.0.0:8040 (for windows "localhost:8040")
+	// Init the router, listen and serve on 0.0.0.0:KPort (for windows "localhost:KPort")
 	CreateInterfaceRouter(webHandler).Run(_core.KPort)
 }
 

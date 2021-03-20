@@ -8,20 +8,21 @@
         class="logo"
       />
     </li>
-    <li><a href="#about"> ABOUT</a></li>
-    <li><a href="#services"> SERVICES</a></li>
-    <li><a href="#prices" class=""> PRICES</a></li>
-    <li><a href="#contact" class=""> CONTACT</a></li>
+    <li><a href="/#about"> ABOUT</a></li>
+    <li><a href="/#services"> SERVICES</a></li>
+    <li><a href="/#prices" class=""> PRICES</a></li>
+    <li><a href="/#contact" class=""> CONTACT</a></li>
   </ul>
   <div>
     <img src="/static/images/svg/telephone.svg" />
     <p>+44 77 94 234 052</p>
   </div>
 </nav>
+{{if not .hideVideo}}
 <video loop autoplay muted playsinline id="myVideo">
   <source src="/static/video/ap.mov" type="video/mp4" />
 </video>
 <a id="about" href="" class="" style="text-align: right">
   <img src="/static/svg/instagram.svg" alt="" class="instagram-video" />
 </a>
-{{end}}
+{{end}} {{end}}

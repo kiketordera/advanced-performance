@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    {{template "header" .}}
+    <title>Document</title>
+  </head>
+  <body>
+    {{template "navbar" .}}
+    <section class="contact">
+      <div class="instagramdash">
+        <div style="padding-top: 20rem" class="grid-cars">
+          {{ range $index, $value := .user.Photos }}
+          <a href="/edit-photo/{{$index}}" class="">
+            <img src="/static/images/uploads/{{$value}}" alt="" />
+          </a>
+          {{ end }}
+        </div>
+      </div>
+      <div class="center fixes">
+        <a href="/logout" class="button">LOGOUT</a>
+      </div>
+    </section>
+  </body>
+</html>

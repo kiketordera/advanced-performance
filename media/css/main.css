@@ -412,10 +412,15 @@ section.optimise .prices-grid div {
 
 section.optimise .prices-grid div p.title {
   font-family: "Bungee", cursive;
-  color: var(--orange);
+  color: black;
+  background-color: var(--dark-orange);
+  width: -webkit-fill-available;
   font-size: 3rem;
   text-align: center;
-  margin: 1rem auto;
+  padding: 0;
+  margin-left: -2rem;
+  margin-right: -2rem;
+  margin-top: -2rem;
 }
 
 section.optimise .prices-grid div p.price {
@@ -424,6 +429,7 @@ section.optimise .prices-grid div p.price {
   text-align: center;
   margin: 0;
   margin: 1rem auto;
+  color: var(--orange);
 }
 
 section.optimise .prices-grid div p.offer {
@@ -435,6 +441,7 @@ section.optimise .prices-grid div hr {
   width: 99%;
   max-width: none;
   margin-right: 5px;
+  margin-bottom: 2rem;
 }
 
 section.optimise .prices-grid .extra {
@@ -597,8 +604,9 @@ section.contact .grid .instagram div {
 
 section.contact .grid .instagram div img {
   max-width: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  max-height: 100%;
+  -o-object-fit: fill;
+     object-fit: fill;
 }
 
 img {
@@ -710,5 +718,249 @@ img {
   float: right;
   line-height: 1;
   font-weight: 100;
+}
+
+.login {
+  padding-top: 15rem;
+  max-width: 75rem;
+  margin: 0 auto;
+}
+
+.login-nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.login-nav button {
+  outline: none;
+  cursor: pointer;
+  width: 100%;
+  background-color: white;
+  border: none;
+  color: var(--dark-blue);
+  font-size: 2rem;
+  font-weight: 500;
+  padding: 2rem;
+  border: 1px solid var(--light-blue);
+}
+
+.login-nav button:not(:last-child) {
+  border-right: 1px solid var(--light-blue);
+}
+
+.login-nav button:first-child {
+  border-top: 1px solid var(--light-blue);
+  border-bottom: 1px solid var(--light-blue);
+  border-top-left-radius: 2rem;
+  border-bottom-left-radius: 2rem;
+}
+
+.login-nav button:last-child {
+  border-top: 1px solid var(--light-blue);
+  border-bottom: 1px solid var(--light-blue);
+  border-top-right-radius: 2rem;
+  border-bottom-right-radius: 2rem;
+}
+
+.login-nav .tab-selected {
+  background-color: var(--light-blue);
+  color: white;
+}
+
+.login .tab-content {
+  background-color: white;
+  padding: 5rem;
+  margin-top: -3rem;
+}
+
+.login .tab-content form p {
+  margin-right: 1rem;
+  margin-left: 1rem;
+  font-size: 2rem;
+  color: var(--dark-blue);
+}
+
+.login .tab-content form input {
+  margin-right: 1rem;
+  margin-left: 1rem;
+  width: -webkit-fill-available;
+  text-align: left;
+  padding: 1rem;
+  margin-top: 2.5rem;
+  border: 2px solid var(--dark-orange);
+}
+
+.login .tab-content form input::-webkit-input-placeholder {
+  color: var(--light-blue);
+  font-weight: 500;
+}
+
+.login .tab-content form input:-ms-input-placeholder {
+  color: var(--light-blue);
+  font-weight: 500;
+}
+
+.login .tab-content form input::-ms-input-placeholder {
+  color: var(--light-blue);
+  font-weight: 500;
+}
+
+.login .tab-content form input::placeholder {
+  color: var(--light-blue);
+  font-weight: 500;
+}
+
+.login .tab-content form input[type="submit"] {
+  text-align: center;
+  color: white;
+  background-color: var(--orange);
+}
+
+a.button {
+  margin-right: 1rem;
+  margin-left: 1rem;
+  width: -webkit-fill-available;
+  text-align: left;
+  padding: 1rem;
+  margin-top: 5rem;
+  border-radius: 50rem;
+  text-align: center;
+  color: white;
+  background-color: var(--orange);
+  text-decoration: none;
+  font-size: 3rem;
+}
+
+.fixes {
+  margin-top: 5rem;
+  padding-bottom: 5rem;
+}
+
+.logo-login {
+  width: 25rem;
+}
+
+.center {
+  text-align: center;
+}
+
+section.feedback .content {
+  top: 15rem;
+  left: 50%;
+  text-align: center;
+}
+
+section.feedback .content p.title {
+  font-size: 3.5rem;
+}
+
+section.feedback .content p {
+  color: var(--dark-blue);
+  max-width: 45rem;
+  font-size: 2.4rem;
+  font-weight: 500;
+}
+
+section.feedback .content img {
+  margin-left: -8rem;
+  max-width: 100%;
+}
+
+.instagramdash {
+  -ms-grid-row: 1;
+      grid-row-start: 1;
+  -ms-grid-column: 2;
+      grid-column-start: 2;
+  -ms-grid-row-span: 2;
+      grid-row-end: span 2;
+  grid-gap: 15px;
+}
+
+@media (max-width: 750px) {
+  .instagramdash {
+    -ms-grid-row: 2;
+        grid-row-start: 2;
+    -ms-grid-column: 1;
+        grid-column-start: 1;
+    grid-column-end: 2;
+  }
+}
+
+.instagramdash div {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 5px;
+}
+
+.instagramdash div img {
+  max-width: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+section.upload-image {
+  padding-top: 25rem;
+  max-width: 75rem;
+  margin: 0 auto;
+  text-align: center;
+}
+
+section.upload-image p {
+  font-size: 3rem;
+}
+
+section.upload-image label,
+section.upload-image input[type="submit"] {
+  width: -webkit-fill-available;
+  margin-right: 2rem;
+  border: 2px solid var(--orange);
+  border-radius: 3rem;
+  font-size: 2rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  background-color: white;
+  color: var(--orange);
+}
+
+section.upload-image label::-webkit-input-placeholder,
+section.upload-image input[type="submit"]::-webkit-input-placeholder {
+  color: var(--orange);
+  font-weight: 500;
+}
+
+section.upload-image label:-ms-input-placeholder,
+section.upload-image input[type="submit"]:-ms-input-placeholder {
+  color: var(--orange);
+  font-weight: 500;
+}
+
+section.upload-image label::-ms-input-placeholder,
+section.upload-image input[type="submit"]::-ms-input-placeholder {
+  color: var(--orange);
+  font-weight: 500;
+}
+
+section.upload-image label::placeholder,
+section.upload-image input[type="submit"]::placeholder {
+  color: var(--orange);
+  font-weight: 500;
+}
+
+section.upload-image input[type="submit"] {
+  margin-top: 3rem;
+  color: white;
+  background-color: var(--orange);
+}
+
+section.upload-image input[type="file"]:valid ~ label {
+  background-color: var(--orange);
+  color: var(--dark-blue);
+  color: white;
 }
 /*# sourceMappingURL=main.css.map */

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    {{template "header" .}}
+    <title>Document</title>
+  </head>
+  <body>
+    {{template "navbar" .}}
+    <section class="login">
+      <div class="center">
+        <img
+          src="/static/images/svg/logo.svg"
+          alt="performance logo"
+          class="logo-login"
+        />
+      </div>
+
+      <div id="tab-1" class="tab-content" style="display: block">
+        <form method="post" enctype="multipart/form-data">
+          <div class="flex">
+            <input type="email" name="femail" placeholder="Email" required="" />
+            <input
+              type="password"
+              name="fpassword"
+              placeholder="Password"
+              required=""
+            />
+          </div>
+          <input type="submit" value="Enviar" />
+        </form>
+      </div>
+      <div id="tab-2" class="tab-content" style="display: none">
+        <form method="post" enctype="multipart/form-data">
+          <input
+            type="checkbox"
+            id="fcheckbox"
+            name="fcheckbox[]"
+            accept="image/*"
+            class="checkbox"
+            value="true"
+            style="display: none"
+          />
+          <div class="flex">
+            <input type="text" name="femail" placeholder="Email" required="" />
+            <input
+              type="password"
+              name="fpassword"
+              placeholder="Contraseña"
+              required=""
+            />
+          </div>
+          <input type="submit" value="Enviar" />
+        </form>
+      </div>
+    </section>
+  </body>
+</html>

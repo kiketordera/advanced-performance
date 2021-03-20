@@ -45,7 +45,7 @@
         <img src="/static/images/motorcycle.png" />
       </div>
       <div>
-        <img src="/static/images/ferrari.png" />
+        <img src="/static/images/motor.png" />
         <div class="text bg-color-light-grey">
           <h3>INSTALL</h3>
           <p>
@@ -157,7 +157,7 @@
         </h2>
         <div class="prices-grid">
           <div>
-            <p class="title">GEARBOX TUNING STAGE</p>
+            <p class="title">GTS</p>
             <p class="price">260€</p>
             <p class="offer">Contains</p>
             <hr />
@@ -169,7 +169,7 @@
             </ul>
           </div>
           <div>
-            <p class="title">Stage 1 by OBD</p>
+            <p class="title">S1</p>
             <p class="price">349€</p>
             <p class="offer">Contains</p>
             <hr />
@@ -182,7 +182,7 @@
           </div>
 
           <div>
-            <p class="title">Stage 3</p>
+            <p class="title">S3</p>
             <p class="price">350€</p>
             <p class="offer">Contains</p>
             <hr />
@@ -192,7 +192,7 @@
             </ul>
           </div>
           <div>
-            <p class="title">Stage 2 by OBD</p>
+            <p class="title">S2</p>
             <p class="price">499€</p>
             <p class="offer">Contains</p>
             <hr />
@@ -204,7 +204,7 @@
             </ul>
           </div>
           <div class="extra">
-            <p class="title">Extra services (Stages 1-2-3)</p>
+            <p class="title">Extra services (S1-S2-S3)</p>
             <ul>
               <li>VMAX OFF from 50€ (without tuning 120€)</li>
               <li>ADBLUE OFF from 120€ (without tuning 240€)</li>
@@ -215,7 +215,7 @@
             </ul>
           </div>
           <div class="extra">
-            <p class="title">Extra services (Stage 2)</p>
+            <p class="title">Extra services (S2)</p>
             <ul>
               <li>Include EGR+DPF off or DECAT</li>
               <li>Bench from 150€ (extra)</li>
@@ -300,12 +300,9 @@
           <h2>Ask our clients</h2>
           <img src="/static/images/insta.png" />
           <div class="grid-cars">
-            <img src="/static/images/red-ferrari.png" alt="" />
-            <img src="/static/images/black-car.png" alt="" />
-            <img src="/static/images/black-ferrari.png" alt="" />
-            <img src="/static/images/yellow-ferrari.png" alt="" />
-            <img src="/static/images/prado.png" alt="" />
-            <img src="/static/images/lambokin.png" alt="" />
+            {{range .user.Photos}}
+            <img src="/static/images/uploads/{{.}}" alt="" />
+            {{end}}
           </div>
           <div class="button">
             <img src="/static/images/svg/fingerprint.svg" alt="" />

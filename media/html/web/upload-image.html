@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    {{template "header" .}}
+    <title>Document</title>
+  </head>
+  <body>
+    {{template "navbar" .}}
+    <section class="upload-image">
+      <p>Upload here your image</p>
+      <form method="post" enctype="multipart/form-data">
+        <div class="flex">
+          <input
+            type="file"
+            name="photo"
+            id="photo"
+            class="file-input"
+            accept="image/*"
+            style="display: none"
+            required
+          />
+          <label class="file-label" for="photo">Photo {{.index}}</label>
+        </div>
+        <div class="right">
+          <input type="submit" value="Enviar" />
+        </div>
+      </form>
+    </section>
+  </body>
+</html>

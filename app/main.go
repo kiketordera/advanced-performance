@@ -15,11 +15,16 @@ import (
 )
 
 func main() {
+	// Get the repository we want acording to the DataBase to use
+	repo := _repository.InitBoltDatabase()
+
+	// Get the Login handler according with the Login that we want
+	login := _repository.GetCustomLogin()
 
 	// Get the repository of the mail
 	mail := _repository.GetCustomMail()
 
-	webHandler := _controllers.NewWebHandler(mail)
+	webHandler := _controllers.NewWebHandler(repo, login, mail)
 
 	// Init the router, listen and serve on 0.0.0.0:8040 (for windows "localhost:8040")
 	CreateInterfaceRouter(webHandler).Run(_core.KPort)
@@ -38,7 +43,7 @@ func CreateInterfaceRouter(h *_controllers.BaseHandler) *gin.Engine {
 	)
 
 	// Tell Gin to use our middleware. This means that in every single request (GET, POST...), the call to i18n will be executed
-	r.Use(_core.SecureMiddleware(), i18n.Serve(bundle))
+	r.Use(_core.SecureMiddleware(), h.Login.CheckToken(), i18n.Serve(bundle))
 
 	// Path to the static files. /static is rendered in the HTML and /media is the link to the path to the  images, svg, css.. the static files
 	r.StaticFS("/static", http.Dir("../media"))
@@ -58,6 +63,17 @@ func CreateInterfaceRouter(h *_controllers.BaseHandler) *gin.Engine {
 
 	r.GET("/dealers", h.RenderDealers)
 	r.POST("/dealers", h.GetForm)
+
+	r.GET("/login", h.Login.EnsureNotLoggedIn, h.RenderLogin)
+	r.POST("/login", h.Login.EnsureNotLoggedIn, h.GetLoginForm)
+
+	r.GET("/dashboard", h.Login.EnsureLoggedIn, h.RenderDashboard)
+
+	r.GET("/edit-photo/:index", h.Login.EnsureLoggedIn, h.RenderEditPhoto)
+	r.POST("/edit-photo/:index", h.Login.EnsureLoggedIn, h.EditPhoto)
+
+	r.GET("/logout", h.Login.Logout)
+
 	return r
 }
 

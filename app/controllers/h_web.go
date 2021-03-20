@@ -27,8 +27,10 @@ func (h *BaseHandler) RenderHome(c *gin.Context) {
 In this case the text of the website, and we are using the i18n to detect the default browser language of the user and show accordingly.
 */
 func (h *BaseHandler) RenderDealers(c *gin.Context) {
+	u := h.Repository.GetAdminUser()
 	c.HTML(http.StatusOK, "dealers.html", gin.H{
-		"hi": i18n.FormatMessage(c, &i18n.Message{ID: "hi"}, nil),
+		"hi":   i18n.FormatMessage(c, &i18n.Message{ID: "hi"}, nil),
+		"user": u,
 	})
 }
 
@@ -84,7 +86,6 @@ func (h *BaseHandler) GetLoginForm(c *gin.Context) {
 	}
 	err := bcrypt.CompareHashAndPassword([]byte(u.Password), []byte(formData.Password))
 	if err == nil {
-		fmt.Print("Pues estro deberia poner la coookkie")
 		h.Login.SetSession(c, u.Email, _domain.Admin)
 		c.Redirect(http.StatusFound, "/dashboard")
 		return

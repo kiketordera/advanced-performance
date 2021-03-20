@@ -4,8 +4,6 @@ In this project, you can find an easy, ready, and documented implementation for 
 
 The project is equipped with all functionality you need to create your own project for rendering a simple website from here. This project uses Clean Architecture
 
-<br>
-
 # Clean architecture
 
 The Clean Architecture was proposed by Robert C. Martin in his book, and two of the most recommended book to read about this topic are (both written by himself):<br>
@@ -82,6 +80,8 @@ To make effective the methods contained in the interface, we need to use the cor
 r.Use(h.Login.CheckToken())
 ```
 
+<br>
+
 ## i18n
 
 Internationalization, often abbreviated as i18n, is the process through which products can be prepared to be taken to other countries. In our case, just mean being able to change the language of the website and show the default language of our user's browser.
@@ -94,9 +94,9 @@ The allowed names of the files must match the i18n international codes:
 af, ar, az, be, bg, bn, bs, ca, cs, cy, da, de, de-AT, de-CH, de-DE, el,
 el-CY, en, en-AU, en-CA, en-GB en-IE, en-IN, en-NZ, en-US, en-ZA, en-CY,
 en-TT, eo, es, es-419, es-AR, es-CL, es-CO, es-CR, es-EC, es-ES es-MX, es-NI,
- es-PA, es-PE, es-US, es-VE, et, eu, fa, fi, fr, fr-CA, fr-CH, fr-FR, gl, he,
- hi, hi-IN, hr hu, id, is, it, it-CH, ja, ka, km, kn, ko, lb, lo, lt, lv, mk,
- ml, mn, mr-IN, ms, nb, ne, nl, nn, oc, or pa, pl, pt, pt-BR, rm, ro, ru, sk,
+es-PA, es-PE, es-US, es-VE, et, eu, fa, fi, fr, fr-CA, fr-CH, fr-FR, gl, he,
+hi, hi-IN, hr hu, id, is, it, it-CH, ja, ka, km, kn, ko, lb, lo, lt, lv, mk,
+ml, mn, mr-IN, ms, nb, ne, nl, nn, oc, or pa, pl, pt, pt-BR, rm, ro, ru, sk,
 sl, sq, sr, st, sw, ta, te, th, tl, tr, tt, ug, ur, uz, vi, wo, zh-CN,
 zh-HK, zh-TW, zh-YUE
 
@@ -130,8 +130,6 @@ We use a middleware called [gin-secure](https://github.com/gin-contrib/secure) t
 
 You have available different ways of making your code run
 
-<br>
-
 ## With Golang
 
 Move to the directory of the main.go file
@@ -157,8 +155,6 @@ go run main.go
 - go mod init
 - go mod tidy
 
-<br>
-
 ## With Docker
 
 Go to the root of the folder, and create the image.
@@ -177,8 +173,6 @@ docker rum name
 
 With Air, you can reload automatically your Golang code every time you save a file.
 
-<br>
-
 ### For making Hotreloading for the first time
 
 Run these commands in this order
@@ -194,8 +188,6 @@ alias air='$(go env GOPATH)/bin/air'
 
 air
 ```
-
-<br>
 
 ### For making Hotreloading **AFTER** the first time
 
@@ -270,8 +262,6 @@ export PATH=$(go env GOPATH)/bin:$PATH
 
 > https://medium.com/@IndianGuru/understanding-go-s-template-package-c5307758fab0
 
-<br>
-
 ## JSON and validation
 
 > http://brandonokert.com/articles/json-management-patterns-in-go/
@@ -280,16 +270,10 @@ export PATH=$(go env GOPATH)/bin:$PATH
 
 > https://tutorialedge.net/golang/secure-coding-in-go-input-validation/
 
-<br>
-
 ## Security
 
 > https://www.veracode.com/blog/secure-development/use-golang-these-mistakes-could-compromise-your-apps-security
 
-<br>
-
 ## Apps for testing your security
 
 > https://www.zaproxy.org/
-
-<br>

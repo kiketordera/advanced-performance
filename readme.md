@@ -211,6 +211,8 @@ If we want to use the hot reload with the make file, write
 make watch
 ```
 
+<br>
+
 # Run the tests
 
 The `main_test.go` file is in the `app/` location.
@@ -224,6 +226,10 @@ https://medium.com/wesionary-team/authenticate-rest-api-in-go-with-firebase-auth
 <br>
 
 # Documentation
+
+We have 2 parts in the documentation, which are the API of the backend, and the technical documents about the project itself.
+
+## API Documentation [Swagger]
 
 To have consistency across projects, we rely on the OpenAPI Specification (formerly Swagger Specification). Is an API description format for REST APIs. An OpenAPI file allows you to describe your entire API, including:
 
@@ -244,13 +250,96 @@ swag init
 A cool article about Swagger in Golang [here](https://martinheinz.dev/blog/9)
 <br><br>
 
-## Troubleshooting documentation
+### Troubleshooting documentation
 
 If you get ERROR: `swag: command not found` then run
 
 ```
 export PATH=$(go env GOPATH)/bin:$PATH
 ```
+
+<br><br>
+
+## Technical documents [PlantUML]
+
+> <b>Note:</b> This is not related to Flutter, this is just a tool to create technical documentation
+
+[PlantUML](https://plantuml.com) is an open-source project, that allows you to create technical documentation for your project, and will transform this code:
+
+```
+@startuml
+
+!define DARKBLUE
+!includeurl https://raw.githubusercontent.com/Drakemor/RedDress-PlantUML/master/style.puml
+class ParentClass {
+    This is How to draw a line
+    --
+    This is how to draw a dot line
+    ..
+    +String PublicAttribute
+    #String ProtectedAttribute
+    -int PrivateAttribute
+    ~int PackageProtectedAttribute
+    --[Line with comment]--
+    int Phone
+    String Apellidos
+    --[line with comment]--
+    +publicMethod()
+    #protectedMethod()
+    -privateMethod()
+    ~packageProtected()
+   ..[Dot line with comments]..
+    getDatabase()
+}
+
+class ChildClass {
+    +String Name
+}
+
+class ChildClassTwo {
+    +String Name
+}
+note left: This is a note \n on the <b>left</b>
+
+
+class ChildClassThree {
+    +String Name
+}
+note right: This is a note \n on the <b>right</b>
+
+' Changing the type of union
+ParentClass <|-- ChildClass
+ParentClass *-- ChildClassTwo
+ChildClass <-- ChildClassTwo
+ChildClass o-- ChildClassThree
+
+@enduml
+```
+
+Into this diagram:
+<br>
+
+  <img src="media/documentation/class.png" alt="Sublime's custom image"/>
+<br><br>
+
+### You can create:
+
+- Sequence diagram
+- Usecase diagram
+- Class diagram
+- Object diagram
+- Activity diagram (here is the legacy syntax)
+- Component diagram
+- Deployment diagram
+- State diagram
+- Timing diagram
+
+### To Install PlantUML
+
+- Install Java in our Computer <br>
+- Install [GraphViz](https://plantuml.com/de/graphviz-do) <br>
+- Install the PlantUML Extension for our IDE <br>
+- You can find rich and full examples of how to define different diagrams [here](https://real-world-plantuml.com/) <br>
 
 <br>
 

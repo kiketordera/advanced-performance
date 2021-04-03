@@ -7,114 +7,66 @@
   <body>
     {{template "navbar" .}}
     <section class="first-section">
-      <h2>WHAT IS CHIP TUNING OR ECU REMAP?</h2>
+      <h2 data-aos="fade-right" class="upper">{{.about_main_title_id}}</h2>
       <br />
       <hr />
-      <p>
-        Modifications we made are based on original calibration files. That’s
-        why our remaps can unlock hidden potential of your car. Specialists in
-        TC Performance have rich experience earned in remapping cars equipped in
-        custom components (different injectors, turbochargers and so on). Our
-        professional engineers and mechanics have developed custom chiptuning
-        Stage 1, Stage 2, Stage 3 and Stage 4.
-      </p>
+      <p data-aos="fade-left">{{.about_main_text1_id}}</p>
+      <p data-aos="fade-left">{{.about_main_text2_id}}</p>
+      <h2 class="upper">{{.your_id}}</h2>
+      <br />
+      <hr />
+      <p>{{.your_text_id}}</p>
     </section>
     <section class="how-works">
       <div>
         <div class="text bg-color-dark-grey">
-          <h3>How does it work?</h3>
-          <p>
-            Modifications we made are based on original calibration files.
-            That’s why our remaps can unlock hidden potential of your car.
-            Specialists in TC Performance have rich experience earned in
-            remapping cars equipped in custom components (different injectors,
-            turbochargers and so on). Our professional engineers and mechanics
-            have developed custom chiptuning Stage 1, Stage 2, Stage 3 and Stage
-            4.
-          </p>
+          <h3 data-aos="fade-right">{{.works_id}}</h3>
+          <p data-aos="fade-left">{{.works_text_id}}</p>
+          <br />
+          <p data-aos="fade-left">{{.works_text2_id}}</p>
         </div>
-        <img src="/static/images/motorcycle.png" />
+        <img data-aos="fade-up" src="/static/images/motorcycle.png" />
       </div>
       <div>
-        <img src="/static/images/motor.png" />
+        <img data-aos="fade-up" src="/static/images/motor.png" />
         <div class="text bg-color-light-grey">
-          <h3>INSTALL</h3>
-          <p>
-            We would be happy to install different car related product. The way
-            to our facility is too far for you? No problem, order the desired
-            system for self-assembly or use our steadily growing network of
-            dealers for professional assembly in your area. We are also able to
-            drive to you and do the optimization of your car without you moving
-            your car from your home or garage. we only need power and a wifi
-            connection to do it. If your car is standing most of the time, or in
-            different situations, like Covid, we can provide you this service
-            easily. SUPPORT (something support relative) We are happy to be at
-            your service at all times with full commitment if you need our
-            support. We look after you in every situation – whether on the
-            racetrack or on the road: with our individual support you are
-            prepared for every situation.
-          </p>
+          <h3 data-aos="fade-left">{{.install_id}}</h3>
+          <p data-aos="fade-right">{{.install_text_id}}</p>
+          <br />
+          <p data-aos="fade-right">{{.install_text2_id}}</p>
         </div>
       </div>
     </section>
     <section id="services" class="step">
-      <h2>
-        <img src="/static/images/svg/chiptunning.png" />CHIPTUNING FILES SERVICE
+      <h2 data-aos="fade-up">
+        <img src="/static/images/svg/chiptunning.png" />{{.serv_tab_title_id}}
       </h2>
       <div class="step-items">
         <div>
           <div>
-            <img src="/static/images/computer.png" />
-            <h3>WHAT IS CHIP TUNING OR ECU REMAP?</h3>
-            <p>
-              ECU Remapping (Electronic Control Unit tuning) is a process of
-              changing product factory settings made by manufacturers and
-              optimize the settings to add extra performance. Car remapping
-              offers many options that can be improved or remove things like RMP
-              power restrictions, better fuel efficiency, or increase absolute
-              boost and boost delivery. New technology will make your car better
-              and easier to drive.
-            </p>
+            <img data-aos="fade-up" src="/static/images/computer.png" />
+            <h3 data-aos="fade-up">{{.file_title_id}}</h3>
+            <p data-aos="fade-up">{{.file_text_id}}</p>
           </div>
           <div>
-            <img src="/static/images/portable dyno.png" />
-            <h3>DEVELOPMENT</h3>
-            <p>
-              We are constantly working with our development crew on optimizing
-              our products. Thanks to the continuous improvement process, you
-              can benefit from our past experience today. The elaborate
-              development methods of our highly qualified engineers are the
-              foundation for maximum performance. Analyzed on the racetrack,
-              optimized for the road, customized for you.
-            </p>
+            <img data-aos="fade-up" src="/static/images/portable dyno.png" />
+            <h3 data-aos="fade-up">{{.soft_optim_title_id}}</h3>
+            <p data-aos="fade-up">{{.soft_optim_text1_id}}</p>
+            <p data-aos="fade-up">{{.soft_optim_text2_id}}</p>
           </div>
         </div>
         <div>
           <div>
-            <img src="/static/images/office.png" />
-            <h3>RICH BRAND VARIETY</h3>
-            <p>
-              Check out our variety of all popular car brands. We tuned engines
-              and improved performance such cars as Alfa Romeo, Alpina, Aston
-              Martin, Audi, BMW, Buick, Cadillac, Chevrolet, Chrysler, Dacia,
-              Daewoo, Ferrari, Fiat, Ford, Infinity, Isuzu, Iveco, Jaguar,
-              Lancia, Land Rover, McLaren, Mercedes Benz, Mini, Mitsubishi,
-              Porsche, Renault, Skoda, Smart, SsangYong, Subaru, Suzuki,
-              Volkswagen, Volvo and many more.
-            </p>
+            <img data-aos="fade-up" src="/static/images/office.png" />
+            <h3 data-aos="fade-up">{{.dyno_title_id}}</h3>
+            <p data-aos="fade-up">{{.dyno_text1_id}}</p>
+            <p data-aos="fade-up">{{.dyno_text2_id}}</p>
           </div>
           <div>
-            <img src="/static/images/iphone.png" />
-            <h3>TESTING DYNO-ROAD</h3>
-            <p>
-              Testing with Dyno-Road: Every product is put through its paces
-              before delivery. You as a Driver can simulate extreme stress
-              situations with our dyno-road equipment, in order to guarantee the
-              stability of the vehicle. Testing On-Road: The drivability of our
-              cars represents the quality of our work. That is why we analyze
-              your driving behavior of the cars through extensive road tests –
-              so that comfort and performance fit together.
-            </p>
+            <img data-aos="fade-up" src="/static/images/iphone.png" />
+            <h3 data-aos="fade-up">{{.device_inst_title_id}}</h3>
+            <p data-aos="fade-up">{{.device_inst_text1_id}}</p>
+            <p data-aos="fade-up">{{.device_inst_text2_id}}</p>
           </div>
         </div>
       </div>
@@ -143,5 +95,8 @@
         </p>
       </div>
     </section>
+    <script>
+      AOS.init();
+    </script>
   </body>
 </html>

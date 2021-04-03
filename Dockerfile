@@ -1,11 +1,14 @@
-FROM golang:alpine
+FROM golang:alpine 
 
 # Set necessary environmet variables needed for our image
 ENV GO111MODULE=on \
     CGO_ENABLED=0 \
     GOOS=linux \
-    GOARCH=amd64\
+    GOARCH=amd64 \
     GIN_MODE=release
+
+# For email certificate
+RUN apk add -U --no-cache ca-certificates
 
 # Copy the code into the container
 COPY media /media/
@@ -26,6 +29,10 @@ WORKDIR /app
 
 # Copy binary from build to main folder
 RUN cp /build/main .
+
+# For email certificate, the 2 lines
+VOLUME /etc/ssl/certs/ca-certificates.crt:/etc/ssl/certs/ca-certificates.crt
+COPY --from=alpine /etc/ssl/certs/ca-certificates.crt /etc/ssl/certs/
 
 # Export necessary port
 EXPOSE 8050

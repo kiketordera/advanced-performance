@@ -227,7 +227,7 @@ https://medium.com/wesionary-team/authenticate-rest-api-in-go-with-firebase-auth
 
 # Documentation
 
-We have 2 parts in the documentation, which are the API of the backend, and the technical documents about the project itself.
+We have 2 parts in the documentation, which are the API of the backend, and the technical documents about the project itself. Both use cross-language and cross-platform tools and standards, so you can apply this technology for documentation in any project of any language.
 
 ## API Documentation [Swagger]
 
@@ -250,7 +250,7 @@ swag init
 A cool article about Swagger in Golang [here](https://martinheinz.dev/blog/9)
 <br><br>
 
-### Troubleshooting documentation
+### Troubleshooting Swagger
 
 If you get ERROR: `swag: command not found` then run
 
@@ -261,8 +261,6 @@ export PATH=$(go env GOPATH)/bin:$PATH
 <br><br>
 
 ## Technical documents [PlantUML]
-
-> <b>Note:</b> This is not related to Flutter, this is just a tool to create technical documentation
 
 [PlantUML](https://plantuml.com) is an open-source project, that allows you to create technical documentation for your project, and will transform this code:
 
@@ -339,7 +337,13 @@ Into this diagram:
 - Install Java in our Computer <br>
 - Install [GraphViz](https://plantuml.com/de/graphviz-do) <br>
 - Install the PlantUML Extension for our IDE <br>
+
+### Resources PlantUML
+
 - You can find rich and full examples of how to define different diagrams [here](https://real-world-plantuml.com/) <br>
+- Custom style used [here](https://github.com/Drakemor/RedDress-PlantUML)
+- [Official documentation](https://plantuml.com/de/)
+- Full detail documentation [here](https://crashedmind.github.io/PlantUMLHitchhikersGuide/index.html#)
 
 <br>
 

@@ -12,7 +12,7 @@ require (
 	github.com/swaggo/gin-swagger v1.3.0
 	github.com/timshannon/bolthold v0.0.0-20200817130212-4a25ab140645
 	go.etcd.io/bbolt v1.3.5 // indirect
-	golang.org/x/crypto v0.0.0-20210317152858-513c2a44f670
+	golang.org/x/crypto v0.0.0-20210322153248-0c34fe9e7dc2
 	golang.org/x/text v0.3.5
 	gopkg.in/mgo.v2 v2.0.0-20190816093944-a6b53ec6cb22
 )

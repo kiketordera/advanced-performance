@@ -9,6 +9,7 @@ import (
 	"github.com/gin-gonic/gin"
 	_domain "github.com/kiketordera/advanced-performance/app/domain"
 	_validators "github.com/kiketordera/advanced-performance/app/validators"
+	i18n "github.com/suisrc/gin-i18n"
 
 	validator "github.com/go-playground/validator/v10"
 )
@@ -37,6 +38,7 @@ func NewWebHandler(repo _domain.IRepository, login _domain.ILogin, mail _domain.
 // Render renders all templates and export the HTML to the browser the HTML
 func (h *BaseHandler) render(c *gin.Context, data gin.H, templateName string) {
 	data["GLOBAL"] = h.getGobalTemplateVariables(c)
+	fmt.Print("This is global: ", data["GLOBAL"])
 	switch c.Request.Header.Get("Accept") {
 	case "application/json":
 		// Respond with JSON
@@ -50,14 +52,10 @@ func (h *BaseHandler) render(c *gin.Context, data gin.H, templateName string) {
 // This method create the global variables and it passes to all the HTML templates
 func (h *BaseHandler) getGobalTemplateVariables(c *gin.Context) map[string]interface{} {
 	m := make(map[string]interface{})
-	// m["home"] = i18n.FormatMessage(c, &i18n.Message{ID: "home"}, nil)
-	// m["rent"] = i18n.FormatMessage(c, &i18n.Message{ID: "rent"}, nil)
-	// m["buy"] = i18n.FormatMessage(c, &i18n.Message{ID: "buy"}, nil)
-	// m["profile"] = i18n.FormatMessage(c, &i18n.Message{ID: "profile"}, nil)
-	// m["uploadProperties"] = i18n.FormatMessage(c, &i18n.Message{ID: "uploadProperties"}, nil)
-	// m["featuredProperties"] = i18n.FormatMessage(c, &i18n.Message{ID: "featuredProperties"}, nil)
-	// m["contact"] = i18n.FormatMessage(c, &i18n.Message{ID: "contact"}, nil)
-	// m["register"] = i18n.FormatMessage(c, &i18n.Message{ID: "register"}, nil)
+	m["about"] = i18n.FormatMessage(c, &i18n.Message{ID: "about_tab_id"}, nil)
+	m["services"] = i18n.FormatMessage(c, &i18n.Message{ID: "serv_tab_title_id"}, nil)
+	m["become"] = i18n.FormatMessage(c, &i18n.Message{ID: "become"}, nil)
+	m["contact"] = i18n.FormatMessage(c, &i18n.Message{ID: "contact_tab_id"}, nil)
 	return m
 }
 

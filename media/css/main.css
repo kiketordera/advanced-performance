@@ -43,7 +43,9 @@ nav {
       -ms-flex-pack: justify;
           justify-content: space-between;
   position: fixed;
+  z-index: 999;
   width: 100%;
+  border-bottom: 2px solid var(--dark-orange);
 }
 
 @media (max-width: 550px) {
@@ -153,6 +155,10 @@ section.first-section img {
   max-width: 95rem;
   padding-bottom: 5rem;
   margin-top: 7rem;
+}
+
+.upper {
+  text-transform: uppercase;
 }
 
 h2 {

@@ -17,10 +17,33 @@ In this case the text of the website, and we are using the i18n to detect the de
 */
 func (h *BaseHandler) RenderHome(c *gin.Context) {
 	u := h.Repository.GetAdminUser()
-	c.HTML(http.StatusOK, "landing.html", gin.H{
-		"hi":   i18n.FormatMessage(c, &i18n.Message{ID: "hi"}, nil),
-		"user": u,
-	})
+	h.render(c, gin.H{
+		"about_main_title_id":  i18n.FormatMessage(c, &i18n.Message{ID: "about_main_title_id"}, nil),
+		"about_main_text1_id":  i18n.FormatMessage(c, &i18n.Message{ID: "about_main_text1_id"}, nil),
+		"about_main_text2_id":  i18n.FormatMessage(c, &i18n.Message{ID: "about_main_text2_id"}, nil),
+		"your_id":              i18n.FormatMessage(c, &i18n.Message{ID: "your_id"}, nil),
+		"your_text_id":         i18n.FormatMessage(c, &i18n.Message{ID: "your_text_id"}, nil),
+		"works_id":             i18n.FormatMessage(c, &i18n.Message{ID: "works_id"}, nil),
+		"works_text_id":        i18n.FormatMessage(c, &i18n.Message{ID: "works_text_id"}, nil),
+		"works_text2_id":       i18n.FormatMessage(c, &i18n.Message{ID: "works_text2_id"}, nil),
+		"install_id":           i18n.FormatMessage(c, &i18n.Message{ID: "install_id"}, nil),
+		"install_text_id":      i18n.FormatMessage(c, &i18n.Message{ID: "install_text_id"}, nil),
+		"install_text2_id":     i18n.FormatMessage(c, &i18n.Message{ID: "install_text2_id"}, nil),
+		"serv_tab_title_id":    i18n.FormatMessage(c, &i18n.Message{ID: "serv_tab_title_id"}, nil),
+		"file_title_id":        i18n.FormatMessage(c, &i18n.Message{ID: "file_title_id"}, nil),
+		"file_text_id":         i18n.FormatMessage(c, &i18n.Message{ID: "file_text_id"}, nil),
+		"soft_optim_title_id":  i18n.FormatMessage(c, &i18n.Message{ID: "soft_optim_title_id"}, nil),
+		"soft_optim_text1_id":  i18n.FormatMessage(c, &i18n.Message{ID: "soft_optim_text1_id"}, nil),
+		"soft_optim_text2_id":  i18n.FormatMessage(c, &i18n.Message{ID: "soft_optim_text2_id"}, nil),
+		"dyno_title_id":        i18n.FormatMessage(c, &i18n.Message{ID: "dyno_title_id"}, nil),
+		"dyno_text1_id":        i18n.FormatMessage(c, &i18n.Message{ID: "dyno_text1_id"}, nil),
+		"dyno_text2_id":        i18n.FormatMessage(c, &i18n.Message{ID: "dyno_text2_id"}, nil),
+		"device_inst_title_id": i18n.FormatMessage(c, &i18n.Message{ID: "device_inst_title_id"}, nil),
+		"device_inst_text1_id": i18n.FormatMessage(c, &i18n.Message{ID: "device_inst_text1_id"}, nil),
+		"device_inst_text2_id": i18n.FormatMessage(c, &i18n.Message{ID: "device_inst_text2_id"}, nil),
+		"device_inst_text3_id": i18n.FormatMessage(c, &i18n.Message{ID: "device_inst_text3_id"}, nil),
+		"user":                 u,
+	}, "landing.html")
 }
 
 /* Renders the dealers page and it passes the parameters that will be rendered in the HTML.
@@ -28,10 +51,65 @@ In this case the text of the website, and we are using the i18n to detect the de
 */
 func (h *BaseHandler) RenderDealers(c *gin.Context) {
 	u := h.Repository.GetAdminUser()
-	c.HTML(http.StatusOK, "dealers.html", gin.H{
-		"hi":   i18n.FormatMessage(c, &i18n.Message{ID: "hi"}, nil),
-		"user": u,
-	})
+	h.render(c, gin.H{
+		"why_title_id":       i18n.FormatMessage(c, &i18n.Message{ID: "why_title_id"}, nil),
+		"why_text1_id":       i18n.FormatMessage(c, &i18n.Message{ID: "why_text1_id"}, nil),
+		"why_text2_id":       i18n.FormatMessage(c, &i18n.Message{ID: "why_text2_id"}, nil),
+		"why_text3_id":       i18n.FormatMessage(c, &i18n.Message{ID: "why_text3_id"}, nil),
+		"become_tab_id":      i18n.FormatMessage(c, &i18n.Message{ID: "become_tab_id"}, nil),
+		"buy_title_id":       i18n.FormatMessage(c, &i18n.Message{ID: "buy_title_id"}, nil),
+		"buy_step1_title_id": i18n.FormatMessage(c, &i18n.Message{ID: "buy_step1_title_id"}, nil),
+		"buy_step1_text_id":  i18n.FormatMessage(c, &i18n.Message{ID: "buy_step1_text_id"}, nil),
+		"buy_step2_title_id": i18n.FormatMessage(c, &i18n.Message{ID: "buy_step2_title_id"}, nil),
+		"buy_step2_text_id":  i18n.FormatMessage(c, &i18n.Message{ID: "buy_step2_text_id"}, nil),
+		"buy_step3_title_id": i18n.FormatMessage(c, &i18n.Message{ID: "buy_step3_title_id"}, nil),
+		"buy_step3_text_id":  i18n.FormatMessage(c, &i18n.Message{ID: "buy_step3_text_id"}, nil),
+		"buy_step4_title_id": i18n.FormatMessage(c, &i18n.Message{ID: "buy_step4_title_id"}, nil),
+		"buy_step4_text_id":  i18n.FormatMessage(c, &i18n.Message{ID: "buy_step4_text_id"}, nil),
+		"price_title_id":     i18n.FormatMessage(c, &i18n.Message{ID: "price_title_id"}, nil),
+		"contains":           i18n.FormatMessage(c, &i18n.Message{ID: "contains"}, nil),
+		"pack1_title_id":     i18n.FormatMessage(c, &i18n.Message{ID: "pack1_title_id"}, nil),
+		"pack1_te1_id":       i18n.FormatMessage(c, &i18n.Message{ID: "pack1_te1_id"}, nil),
+		"pack1_te2_id":       i18n.FormatMessage(c, &i18n.Message{ID: "pack1_te2_id"}, nil),
+		"pack1_te3_id":       i18n.FormatMessage(c, &i18n.Message{ID: "pack1_te3_id"}, nil),
+		"pack1_te4_id":       i18n.FormatMessage(c, &i18n.Message{ID: "pack1_te4_id"}, nil),
+		"pack2_title_id":     i18n.FormatMessage(c, &i18n.Message{ID: "pack2_title_id"}, nil),
+		"pack2_t1_id":        i18n.FormatMessage(c, &i18n.Message{ID: "pack2_t1_id"}, nil),
+		"pack2_t2_id":        i18n.FormatMessage(c, &i18n.Message{ID: "pack2_t2_id"}, nil),
+		"pack2_t3_id":        i18n.FormatMessage(c, &i18n.Message{ID: "pack2_t3_id"}, nil),
+		"pack2_t4_id":        i18n.FormatMessage(c, &i18n.Message{ID: "pack2_t4_id"}, nil),
+		"pack3_title_id":     i18n.FormatMessage(c, &i18n.Message{ID: "pack3_title_id"}, nil),
+		"pack3_t1_id":        i18n.FormatMessage(c, &i18n.Message{ID: "pack3_t1_id"}, nil),
+		"pack3_t2_id":        i18n.FormatMessage(c, &i18n.Message{ID: "pack3_t2_id"}, nil),
+		"pack4_title_id":     i18n.FormatMessage(c, &i18n.Message{ID: "pack4_title_id"}, nil),
+		"pack4_t1_id":        i18n.FormatMessage(c, &i18n.Message{ID: "pack4_t1_id"}, nil),
+		"pack4_t2_id":        i18n.FormatMessage(c, &i18n.Message{ID: "pack4_t2_id"}, nil),
+		"pack4_t3_id":        i18n.FormatMessage(c, &i18n.Message{ID: "pack4_t3_id"}, nil),
+		"pack4_t4_id":        i18n.FormatMessage(c, &i18n.Message{ID: "pack4_t4_id"}, nil),
+		"pack5_title_id":     i18n.FormatMessage(c, &i18n.Message{ID: "pack5_title_id"}, nil),
+		"pack5_t1_id":        i18n.FormatMessage(c, &i18n.Message{ID: "pack5_t1_id"}, nil),
+		"pack5_t2_id":        i18n.FormatMessage(c, &i18n.Message{ID: "pack5_t2_id"}, nil),
+		"pack5_t3_id":        i18n.FormatMessage(c, &i18n.Message{ID: "pack5_t3_id"}, nil),
+		"pack5_t4_id":        i18n.FormatMessage(c, &i18n.Message{ID: "pack5_t4_id"}, nil),
+		"pack5_t5_id":        i18n.FormatMessage(c, &i18n.Message{ID: "pack5_t5_id"}, nil),
+		"pack5_t6_id":        i18n.FormatMessage(c, &i18n.Message{ID: "pack5_t6_id"}, nil),
+		"pack6_title_id":     i18n.FormatMessage(c, &i18n.Message{ID: "pack6_title_id"}, nil),
+		"pack6_t1_id":        i18n.FormatMessage(c, &i18n.Message{ID: "pack6_t1_id"}, nil),
+		"pack6_t2_id":        i18n.FormatMessage(c, &i18n.Message{ID: "pack6_t2_id"}, nil),
+		"pack6_t3_id":        i18n.FormatMessage(c, &i18n.Message{ID: "pack6_t3_id"}, nil),
+		"pack6_t4_id":        i18n.FormatMessage(c, &i18n.Message{ID: "pack6_t4_id"}, nil),
+		"contact_tab_id":     i18n.FormatMessage(c, &i18n.Message{ID: "contact_tab_id"}, nil),
+		"become_text_id":     i18n.FormatMessage(c, &i18n.Message{ID: "become_text_id"}, nil),
+		"form_title_id":      i18n.FormatMessage(c, &i18n.Message{ID: "form_title_id"}, nil),
+		"form_1_id":          i18n.FormatMessage(c, &i18n.Message{ID: "form_1_id"}, nil),
+		"form_2_id":          i18n.FormatMessage(c, &i18n.Message{ID: "form_2_id"}, nil),
+		"form_3_id":          i18n.FormatMessage(c, &i18n.Message{ID: "form_3_id"}, nil),
+		"contact_id":         i18n.FormatMessage(c, &i18n.Message{ID: "contact_id"}, nil),
+		"insta_clients":      i18n.FormatMessage(c, &i18n.Message{ID: "insta_clients"}, nil),
+		"insta_id":           i18n.FormatMessage(c, &i18n.Message{ID: "insta_id"}, nil),
+		"become":             i18n.FormatMessage(c, &i18n.Message{ID: "become"}, nil),
+		"user":               u,
+	}, "dealers.html")
 }
 
 /* Renders the dealers page and it passes the parameters that will be rendered in the HTML.

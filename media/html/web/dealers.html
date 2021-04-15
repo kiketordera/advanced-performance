@@ -7,12 +7,12 @@
   <body>
     {{template "navbar" .}}
     <section class="first-section">
-      <section style="background-color: transparent" class="optimise">
+      <section style="background-color: transparent;  overflow-y: hidden;" class="optimise">
         <div class="optimise-item">
           <h2 data-aos="fade-right">
             <img
-              style="padding-bottom: 0; margin-top: 0"
-              src="/static/images/svg/software.svg"
+              style="padding-bottom: 0; margin-top: 0; max-width: 3.5rem;"
+              src="/static/svg/profile.svg"
             />{{.why_title_id}}
           </h2>
           <p data-aos="fade-up">{{.why_text1_id}}</p>
@@ -79,24 +79,32 @@
           <div data-aos="fade-right">
             <p class="title">GTS</p>
             <p class="price">260€</p>
-            <p class="offer">{{.contains}}</p>
-            <hr />
+            <!-- <p class="offer">{{.contains}}</p>
+            <hr /> -->
             <ul>
+              <hr>
               <li>{{.pack1_te1_id}}</li>
+              <hr>
               <li>{{.pack1_te2_id}}</li>
+              <hr>
               <li>{{.pack1_te3_id}}</li>
+              <hr>
               <li>{{.pack1_te4_id}}</li>
             </ul>
           </div>
           <div data-aos="fade-up">
             <p class="title">S1</p>
             <p class="price">349€</p>
-            <p class="offer">{{.contains}}</p>
-            <hr />
+            <!-- <p class="offer">{{.contains}}</p>
+            <hr /> -->
             <ul>
+              <hr>
               <li>{{.pack2_t1_id}}</li>
+              <hr>
               <li>{{.pack2_t2_id}}</li>
+              <hr>
               <li>{{.pack2_t3_id}}</li>
+              <hr>
               <li>{{.pack2_t4_id}}</li>
             </ul>
           </div>
@@ -104,42 +112,56 @@
           <div data-aos="fade-up">
             <p class="title">S2</p>
             <p class="price">350€</p>
-            <p class="offer">{{.contains}}</p>
-            <hr />
+            <!-- <p class="offer">{{.contains}}</p>
+            <hr /> -->
             <ul>
+              <hr>
               <li>{{.pack3_t1_id}}</li>
+              <hr>
               <li>{{.pack3_t2_id}}</li>
             </ul>
           </div>
           <div data-aos="fade-left">
             <p class="title">S3</p>
             <p class="price">499€</p>
-            <p class="offer">{{.contains}}</p>
-            <hr />
+            <!-- <p class="offer">{{.contains}}</p>
+            <hr /> -->
             <ul>
+              <hr>
               <li>{{.pack4_t1_id}}</li>
+              <hr>
               <li>{{.pack4_t2_id}}</li>
+              <hr>
               <li>{{.pack4_t3_id}}</li>
+              <hr>
               <li>{{.pack4_t4_id}}</li>
             </ul>
           </div>
           <div data-aos="fade-right" class="extra">
-            <p class="title">{{.pack5_title_id}}</p>
+            <p class="title">{{.pack5_title_id}}</p><br><br>
             <ul>
               <li>{{.pack5_t1_id}}</li>
+              <hr>
               <li>{{.pack5_t2_id}}</li>
-              <li>{{.pack5_t3_id}}</li>
+              <hr>
+              <li>{{.pack5_t3_id}}</li> 
+              <hr>
               <li>{{.pack5_t4_id}}</li>
+              <hr>
               <li>{{.pack5_t5_id}}</li>
+              <hr>
               <li>{{.pack5_t6_id}}</li>
             </ul>
           </div>
           <div data-aos="fade-left" class="extra">
-            <p class="title">{{.pack6_title_id}}</p>
+            <p class="title">{{.pack6_title_id}}</p><br><br>
             <ul>
               <li>{{.pack6_t1_id}}</li>
+              <hr>
               <li>{{.pack6_t2_id}}</li>
+              <hr>
               <li>{{.pack6_t3_id}}</li>
+              <hr>
               <li>{{.pack6_t4_id}}</li>
             </ul>
           </div>
@@ -192,12 +214,12 @@
     <section id="contact" class="contact">
       <div class="grid">
         <div data-aos="fade-right">
-          <h2>{{.contact_tab_id}}</h2>
+          <h2>{{.contact}}</h2>
           <div>
             <img src="/static/images/svg/whatsapp.svg" alt="" />
             <p>+44 77 94 234 052</p>
           </div>
-          <div>
+          <div style="margin-top: -7rem;">
             <img src="/static/images/svg/envelope.svg" alt="" />
             <p>hello@ap-chip.com</p>
           </div>
@@ -212,23 +234,39 @@
             </div>
           </a>
         </div>
-        <div data-aos="fade-left" class="instagram">
+        <!-- <div data-aos="fade-left" class="instagram">
           <h2>{{.insta_clients}}</h2>
-          <img src="/static/images/insta.png" />
+          <img style="max-width: 190px; margin-top: 2rem;" src="/static/images/insta.png" />
           <div class="grid-cars">
             {{range .user.Photos}}
             <img src="/static/images/uploads/{{.}}" alt="" />
             {{end}}
           </div>
-          <div class="button">
+          <div style="max-width: fit-content;" class="button">
             <img src="/static/images/svg/fingerprint.svg" alt="" />
             <p>{{.insta_id}}</p>
           </div>
-        </div>
+        </div> -->
       </div>
     </section>
     <script>
       AOS.init();
     </script>
+    <script src="https://apps.elfsight.com/p/platform.js" defer></script>
+    <div class="elfsight-app-6862ae0f-2648-461a-a13f-e9a846cfecb3"></div>
+    
+<!-- Place <div> tag where you want the feed to appear -->
+  <div style="text-align: center;" id="curator-feed-default-feed-layout">
+    <h2>{{.insta_clients}}</h2>
+    <img style="max-width: 190px; margin-top: 2rem;" src="/static/images/insta.png" />  <!-- The Javascript can be moved to the end of the html page before the </body> tag -->
+    <script type="text/javascript">
+    /* curator-feed-default-feed-layout */
+    (function(){
+    var i, e, d = document, s = "script";i = d.createElement("script");i.async = 1;
+    i.src = "https://cdn.curator.io/published/d69453b1-0e27-490a-8006-33482ce5c0c3.js";
+    e = d.getElementsByTagName(s)[0];e.parentNode.insertBefore(i, e);
+    })();
+    </script>
+        
   </body>
 </html>

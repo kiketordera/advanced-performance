@@ -14,6 +14,7 @@
 
 // All the project is designed on rem instead of px, that means that ell elements that are measures in the rem unit (which substitues the px unit), are pointing to the font-size of the html{} tag. So thanks to that, we can make here the media queries for handeling the different sizes of the screens, and since all rem units are pointing to this font-size attribute, when we change it here, we change it in the wholen rem units across the project
 html {
+  overflow-x: hidden;
   box-sizing: border-box;
   font-size: 62.5%;
   margin: 0;
@@ -209,13 +210,14 @@ hr {
       padding: 2rem;
       width: 100%;
       h3 {
-        font-size: 1.9rem;
+        font-size: 2.5rem;
         text-align: center;
       }
       p {
         font-size: 1.7rem;
         max-width: 50rem;
         margin: 0 auto;
+        text-align: justify;
       }
     }
     img {
@@ -255,9 +257,11 @@ section.step {
       p {
         max-width: 45rem;
         font-size: 1.6rem;
+        text-align: justify;
       }
       h3 {
         font-size: 2rem;
+        text-align: center;
       }
       img {
         max-width: 100%;
@@ -308,9 +312,8 @@ section.optimise {
     }
     max-width: 150rem;
     margin: 0 auto;
-    grid-gap: 5px;
+    grid-gap: 15px;
     padding: 5px;
-    background-color: var(--dark-orange);
     color: white;
     div {
       background-color: black;
@@ -322,7 +325,7 @@ section.optimise {
       p.title {
         font-family: "Bungee", cursive;
         color: black;
-        background-color: var(--dark-orange);
+        background-color: var(--orange);
         width: -webkit-fill-available;
         font-size: 3rem;
         text-align: center;
@@ -330,11 +333,15 @@ section.optimise {
         padding: 0;
         margin-left: -2rem;
         margin-right: -2rem;
+        @media (max-width: 550px) {
+          margin-left: -0.75rem;
+          margin-right: -0.75rem;
+        }
         margin-top: -2rem;
       }
       p.price {
         font-family: "Bungee", cursive;
-        font-size: 5rem;
+        font-size: 4.3rem;
         text-align: center;
         margin: 0;
         margin: 1rem auto;
@@ -349,6 +356,26 @@ section.optimise {
         max-width: none;
         margin-right: 5px;
         margin-bottom: 2rem;
+      }
+      ul {
+        list-style-type: none;
+        padding-inline-start: 0px;
+        margin-left: -1.5rem;
+        margin-right: -1.5rem;
+        @media (max-width: 550px) {
+          margin-left: 0rem;
+          margin-right: 0rem;
+        }
+        hr  {
+          border: 1px solid var(--orange);
+          margin-top: 2rem;
+        }
+        li {
+          text-transform: uppercase;
+          font-size: 1.5rem;
+          text-align: center;
+          // border-bottom: 2px solid pink;
+        }
       }
     }
     .extra {
@@ -369,11 +396,11 @@ section.contact {
     @media (max-width: 750px) {
       grid-template-columns: 1fr;
     }
-    grid-gap: 10px;
+    grid-gap: 15px;
     padding: 10px;
     margin: 0 auto;
     div {
-      border: solid 2px var(--dark-orange);
+      border: solid 3px var(--background-dark-grey);
       background-color: white;
       padding: 3rem;
       @media (max-width: 1150px) {
@@ -401,7 +428,7 @@ section.contact {
       }
       .join-us {
         margin: 0 auto;
-        margin-top: 2rem;
+        margin-top: 7rem;
         font-size: 1.8rem;
       }
       .button {
@@ -414,7 +441,7 @@ section.contact {
         height: 7rem;
         margin: 0 auto;
         &-join {
-          margin-top: 13rem;
+          margin-top: 6rem;
           @media (max-width: 1400px) {
             margin-top: 10rem;
           }
@@ -430,6 +457,7 @@ section.contact {
         p {
           align-self: center;
           margin: 0 3rem;
+          margin-left: -1rem;
         }
       }
       .button:hover {
@@ -453,6 +481,8 @@ section.contact {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
         grid-gap: 5px;
+        max-width: 47rem;
+        margin: 0 auto;
         img {
           max-width: 100%;
           max-height: 100%;

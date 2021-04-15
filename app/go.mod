@@ -8,6 +8,7 @@ require (
 	github.com/gin-gonic/gin v1.6.3
 	github.com/go-playground/validator/v10 v10.4.1
 	github.com/go-sanitize/sanitize v1.0.0
+	github.com/mailjet/mailjet-apiv3-go v0.0.0-20201009050126-c24bc15a9394 // indirect
 	github.com/suisrc/gin-i18n v0.1.1
 	github.com/swaggo/gin-swagger v1.3.0
 	github.com/timshannon/bolthold v0.0.0-20200817130212-4a25ab140645

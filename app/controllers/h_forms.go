@@ -18,5 +18,6 @@ func (h *BaseHandler) GetForm(c *gin.Context) {
 		Message string `form:"fmessage" binding:"required" san:"max=1250,trim,xss"`
 	}{}
 	_core.ValidateSanitaze(c, formData, h.Validate)
-	c.Redirect(http.StatusFound, "#good-feedback")
+	h.Mail.SendMailCorfirmation(formData.Name, formData.Contact, formData.Message)
+	c.Redirect(http.StatusFound, "/dealers/#good-feedback")
 }

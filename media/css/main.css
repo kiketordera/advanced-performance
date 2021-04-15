@@ -11,6 +11,7 @@
 }
 
 html {
+  overflow-x: hidden;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   font-size: 62.5%;
@@ -266,7 +267,7 @@ hr {
 }
 
 .how-works div .text h3 {
-  font-size: 1.9rem;
+  font-size: 2.5rem;
   text-align: center;
 }
 
@@ -274,6 +275,7 @@ hr {
   font-size: 1.7rem;
   max-width: 50rem;
   margin: 0 auto;
+  text-align: justify;
 }
 
 .how-works div img {
@@ -337,10 +339,12 @@ section.step .step-items div div {
 section.step .step-items div p {
   max-width: 45rem;
   font-size: 1.6rem;
+  text-align: justify;
 }
 
 section.step .step-items div h3 {
   font-size: 2rem;
+  text-align: center;
 }
 
 section.step .step-items div img {
@@ -391,9 +395,8 @@ section.optimise .prices-grid {
       grid-template-columns: 1fr 1fr 1fr 1fr;
   max-width: 150rem;
   margin: 0 auto;
-  grid-gap: 5px;
+  grid-gap: 15px;
   padding: 5px;
-  background-color: var(--dark-orange);
   color: white;
 }
 
@@ -419,7 +422,7 @@ section.optimise .prices-grid div {
 section.optimise .prices-grid div p.title {
   font-family: "Bungee", cursive;
   color: black;
-  background-color: var(--dark-orange);
+  background-color: var(--orange);
   width: -webkit-fill-available;
   font-size: 3rem;
   text-align: center;
@@ -429,9 +432,16 @@ section.optimise .prices-grid div p.title {
   margin-top: -2rem;
 }
 
+@media (max-width: 550px) {
+  section.optimise .prices-grid div p.title {
+    margin-left: -0.75rem;
+    margin-right: -0.75rem;
+  }
+}
+
 section.optimise .prices-grid div p.price {
   font-family: "Bungee", cursive;
-  font-size: 5rem;
+  font-size: 4.3rem;
   text-align: center;
   margin: 0;
   margin: 1rem auto;
@@ -448,6 +458,32 @@ section.optimise .prices-grid div hr {
   max-width: none;
   margin-right: 5px;
   margin-bottom: 2rem;
+}
+
+section.optimise .prices-grid div ul {
+  list-style-type: none;
+  -webkit-padding-start: 0px;
+          padding-inline-start: 0px;
+  margin-left: -1.5rem;
+  margin-right: -1.5rem;
+}
+
+@media (max-width: 550px) {
+  section.optimise .prices-grid div ul {
+    margin-left: 0rem;
+    margin-right: 0rem;
+  }
+}
+
+section.optimise .prices-grid div ul hr {
+  border: 1px solid var(--orange);
+  margin-top: 2rem;
+}
+
+section.optimise .prices-grid div ul li {
+  text-transform: uppercase;
+  font-size: 1.5rem;
+  text-align: center;
 }
 
 section.optimise .prices-grid .extra {
@@ -470,7 +506,7 @@ section.contact .grid {
   display: grid;
   -ms-grid-columns: 1fr 1fr;
       grid-template-columns: 1fr 1fr;
-  grid-gap: 10px;
+  grid-gap: 15px;
   padding: 10px;
   margin: 0 auto;
 }
@@ -483,7 +519,7 @@ section.contact .grid {
 }
 
 section.contact .grid div {
-  border: solid 2px var(--dark-orange);
+  border: solid 3px var(--background-dark-grey);
   background-color: white;
   padding: 3rem;
   text-align: center;
@@ -523,7 +559,7 @@ section.contact .grid div div img {
 
 section.contact .grid div .join-us {
   margin: 0 auto;
-  margin-top: 2rem;
+  margin-top: 7rem;
   font-size: 1.8rem;
 }
 
@@ -543,7 +579,7 @@ section.contact .grid div .button {
 }
 
 section.contact .grid div .button-join {
-  margin-top: 13rem;
+  margin-top: 6rem;
 }
 
 @media (max-width: 1400px) {
@@ -570,6 +606,7 @@ section.contact .grid div .button p {
       -ms-grid-row-align: center;
       align-self: center;
   margin: 0 3rem;
+  margin-left: -1rem;
 }
 
 section.contact .grid div .button:hover {
@@ -606,6 +643,8 @@ section.contact .grid .instagram div {
   -ms-grid-columns: 1fr 1fr 1fr;
       grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 5px;
+  max-width: 47rem;
+  margin: 0 auto;
 }
 
 section.contact .grid .instagram div img {

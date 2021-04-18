@@ -689,7 +689,10 @@ img {
 }
 
 .popup:target {
-  visibility: visible;
+  -webkit-animation: 0.5s fadeIn;
+          animation: 0.5s fadeIn;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
 }
 
 .popup-content {
@@ -1007,5 +1010,38 @@ section.upload-image input[type="file"]:valid ~ label {
   background-color: var(--orange);
   color: var(--dark-blue);
   color: white;
+}
+
+@-webkit-keyframes fadeIn {
+  99% {
+    visibility: hidden;
+  }
+  100% {
+    visibility: visible;
+  }
+}
+
+@keyframes fadeIn {
+  99% {
+    visibility: hidden;
+  }
+  100% {
+    visibility: visible;
+  }
+}
+
+.animated:hover img {
+  -webkit-transform: translateX(530%);
+          transform: translateX(530%);
+  -webkit-transition-duration: 0.5s;
+          transition-duration: 0.5s;
+}
+
+.animated:hover p {
+  color: var(--dark-orange);
+  margin-left: -7rem !important;
+  margin-right: 8rem !important;
+  -webkit-transition-duration: 0.15s;
+          transition-duration: 0.15s;
 }
 /*# sourceMappingURL=main.css.map */

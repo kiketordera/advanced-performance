@@ -366,7 +366,7 @@ section.optimise {
           margin-left: 0rem;
           margin-right: 0rem;
         }
-        hr  {
+        hr {
           border: 1px solid var(--orange);
           margin-top: 2rem;
         }
@@ -527,7 +527,8 @@ img {
   backdrop-filter: blur(5px);
 
   &:target {
-    visibility: visible;
+    animation: 0.5s fadeIn;
+    animation-fill-mode: forwards;
   }
   &-content {
     margin: 0 auto;
@@ -785,4 +786,23 @@ section.upload-image {
     color: var(--dark-blue);
     color: white;
   }
+}
+
+@keyframes fadeIn {
+  99% {
+    visibility: hidden;
+  }
+  100% {
+    visibility: visible;
+  }
+}
+.animated:hover img {
+  transform: translateX(530%);
+  transition-duration: 0.5s;
+}
+.animated:hover p {
+  color: var(--dark-orange);
+  margin-left: -7rem !important;
+  margin-right: 8rem !important;
+  transition-duration: 0.15s;
 }
